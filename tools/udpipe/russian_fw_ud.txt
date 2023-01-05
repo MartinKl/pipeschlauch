@@ -1,0 +1,87 @@
+# newdoc id = ../../../tree-tagger-linux-3.2/data/russian/russian_fw.txt
+# newpar
+# sent_id = 1
+1	Я	Я	PRON	PRP	Case=Nom|Number=Sing|Person=1	_	_	_	_
+2	шла	ИДТИ	VERB	VBC	Aspect=Imp|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+3	по	ПО	ADP	IN	_	_	_	_	_
+4	тратуару	тратуару	PROPN	NNP	Animacy=Inan|Case=Dat|Gender=Masc|Number=Sing	_	_	_	_
+5	и	И	CCONJ	CC	_	_	_	_	_
+6	в	В	ADP	IN	_	_	_	_	_
+7	мою	мою	ADJ	JJL	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+8	сторону	СТОРОНА	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+9	шли	ИДТИ	VERB	VBC	Aspect=Imp|Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin	_	_	_	_
+10	жнешина	жнешина	PROPN	NNP	Animacy=Anim|Case=Acc|Gender=Masc|Number=Sing	_	_	_	_
+11	с	С	ADP	IN	_	_	_	_	_
+12	коляской	коляской	ADJ	JJL	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	_	_	_	_
+13	и	И	CCONJ	CC	_	_	_	_	_
+14	мужчина	МУЖЧИНА	NOUN	NN	Animacy=Anim|Case=Nom|Gender=Masc|Number=Sing	_	_	_	_
+15	с	С	ADP	IN	_	_	_	_	_
+16	мячом	мячОМ	NOUN	NN	Animacy=Inan|Case=Ins|Gender=Masc|Number=Sing	_	_	_	_
+17	.	.	PUNCT	.	_	_	_	_	_
+
+# sent_id = 2
+1	На	НА	ADP	IN	_	_	_	_	_
+2	другой	ДРУГОЙ	ADJ	JJL	Animacy=Inan|Case=Loc|Gender=Fem|Number=Sing	_	_	_	_
+3	стороне	СТОРОНА	NOUN	NN	Animacy=Inan|Case=Loc|Gender=Fem|Number=Sing	_	_	_	_
+4	стояла	СТОЯТЬ	VERB	VBC	Aspect=Imp|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+5	женьщина	женьщИНА	NOUN	NN	Animacy=Anim|Case=Nom|Gender=Fem|Number=Sing	_	_	_	_
+6	с	С	ADP	IN	_	_	_	_	_
+7	собакой	собакой	DET	WDT	Animacy=Inan|Case=Nom|Gender=Masc|Number=Sing	_	_	_	_
+8	и	И	CCONJ	CC	_	_	_	_	_
+9	упакововала	упакововала	VERB	VBC	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+10	продукты	ПРОДУКТ	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Masc|Number=Plur	_	_	_	_
+11	в	В	ADP	IN	_	_	_	_	_
+12	машину	МАШИНА	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+13	.	.	PUNCT	.	_	_	_	_	_
+
+# sent_id = 3
+1	Собака	СоБАК	NOUN	NN	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	_	_	_	_
+2	увидела	увиДЕЛО	VERB	VBC	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+3	мячь	мячь	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+4	и	И	CCONJ	CC	_	_	_	_	_
+5	хотела	хоТЕЛО	VERB	VBC	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+6	хвататься	хвататься	VERB	VB	Aspect=Imp|VerbForm=Inf|Voice=Mid	_	_	_	_
+7	за	ЗА	ADP	IN	_	_	_	_	_
+8	ним	ОН	PRON	PRP	Case=Ins|Gender=Masc|Number=Sing|Person=3	_	_	_	_
+9	.	.	PUNCT	.	_	_	_	_	_
+
+# sent_id = 4
+1	В	В	ADP	IN	_	_	_	_	_
+2	этот	ЭТОТ	DET	DT	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	_	_	_	_
+3	момент	МОМЕНТ	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	_	_	_	_
+4	подъезжала	подъезжала	VERB	VBC	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+5	машина,которая	машина,коТОРОЙ	PRON	AWP	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	_	_	_	_
+6	хотела	хоТЕЛО	VERB	VBC	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+7	припарковаться	припарковаться	VERB	VB	Aspect=Imp|VerbForm=Inf|Voice=Mid	_	_	_	_
+8	.	.	PUNCT	.	_	_	_	_	_
+
+# sent_id = 5
+1	Зади	Зади	ADV	RB	_	_	_	_	_
+2	с	С	ADP	IN	_	_	_	_	_
+3	ней	ОНА	PRON	PRP	Case=Ins|Gender=Fem|Number=Sing|Person=3	_	_	_	_
+4	была	БЫТЬ	AUX	VBC	Aspect=Imp|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+5	белая	БЕЛЫЙ	ADJ	JJL	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	_	_	_	_
+6	машина,	машина,	PUNCT	,	_	_	_	_	_
+7	которая	КОТОРЫЙ	PRON	AWP	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	_	_	_	_
+8	близко	БЛИЗКО	ADV	RB	_	_	_	_	_
+9	с	С	ADP	IN	_	_	_	_	_
+10	другой	ДРУГОЙ	ADJ	JJL	Animacy=Inan|Case=Loc|Gender=Fem|Number=Sing	_	_	_	_
+11	была	БЫТЬ	AUX	VBC	Aspect=Imp|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+12	.	.	PUNCT	.	_	_	_	_	_
+
+# sent_id = 6
+1	Так	ТАК	ADV	RB	_	_	_	_	_
+2	задний	задний	VERB	VBNL	Animacy=Anim|Aspect=Perf|Case=Nom|Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Act	_	_	_	_
+3	водитель	водитель	NOUN	NN	Animacy=Anim|Case=Nom|Gender=Masc|Number=Sing	_	_	_	_
+4	не	НЕ	PART	NEG	Polarity=Neg	_	_	_	_
+5	мог	МОЧЬ	VERB	VBC	Aspect=Imp|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+6	видеть	ВИДЕТЬ	VERB	VB	Aspect=Imp|VerbForm=Inf	_	_	_	_
+7	что	ЧТО	SCONJ	IN	_	_	_	_	_
+8	произайдёт	ИДТпроизай	VERB	VBC	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	_	_	_	_
+9	и	И	CCONJ	CC	_	_	_	_	_
+10	ввъехал	ввъехал	VERB	VBC	Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+11	в	В	ADP	IN	_	_	_	_	_
+12	переднюю	пеРЕДНИЙ	ADJ	JJL	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+13	машину	МАШИНА	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+14	.	.	PUNCT	.	_	_	_	_	_
+

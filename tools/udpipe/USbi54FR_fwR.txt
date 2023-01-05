@@ -1,0 +1,166 @@
+1	добрый	добрый	ADJ	A	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing	2	amod	_	_
+2	день	день	NOUN	S,m,inan	Case=Nom|Gender=Masc|Number=Sing	0	root	_	_
+
+1	за	за	ADP	PR	_	2	mark	_	_
+2	пишу	писать	VERB	V,ipf,tran	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	вам	вы	PRON	SPRO,pl,2p	Case=Dat|Number=Plur|Person=2	4	obl	_	_
+4	сообщить	сообщить	VERB	V,pf,tran	VerbForm=Inf	2	advcl	_	_
+5	о	о	ADP	PR	_	8	case	_	_
+6	происшествии	происшествие 	ADJ	S,n,inan	Case=Loc|Gender=Neut|Number=Sing	8	amod	_	_
+7	которое	который	PRON	APRO	Case=Acc|Gender=Neut|Number=Sing	8	obj	_	_
+8	видела	видеть	VERB	V,ipf,tran	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	4	obl	_	_
+9	днём	днь	NOUN	S,m,inan	Case=Ins|Gender=Masc|Number=Sing	8	obl	_	_
+10	во	в	ADP	PR	_	11	case	_	_
+11	дворе	двор	NOUN	S,m,inan	Case=Loc|Gender=Masc|Number=Sing	9	nmod	_	_
+
+1	произошло	произойти	VERB	V,pf,intr	Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	0	root	_	_
+2	столкновение	столкновение	NOUN	S,n,inan	Case=Nom|Gender=Neut|Number=Sing	1	nsubj	_	_
+3	на	на	ADP	PR	_	4	case	_	_
+4	парковке	парковка	NOUN	S,f,inan	Case=Loc|Gender=Fem|Number=Sing	2	nmod	_	_
+5	проезжей	проезжий	ADJ	A	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	6	amod	_	_
+6	части	часть	NOUN	S,f,inan	Case=Gen|Gender=Fem|Number=Sing	4	nmod	_	_
+7	дороги	дорога	NOUN	S,f,inan	Case=Gen|Gender=Fem|Number=Sing	6	nmod	_	_
+
+1	шла	идти	VERB	V,ipf,intr	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	0	root	_	_
+2	молодая	молодой	ADJ	A	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	3	amod	_	_
+3	пара	пара	NOUN	S,f,inan	Case=Nom|Gender=Fem|Number=Sing	1	nsubj	_	_
+4	муж	муж	NOUN	S,m,anim	Case=Nom|Gender=Masc|Number=Sing	3	nmod	_	_
+5	с	с	ADP	PR	_	6	case	_	_
+6	мячом	мяч	NOUN	S,m,inan	Case=Ins|Gender=Masc|Number=Sing	4	nmod	_	_
+
+1	жена	жена	NOUN	S,f,anim	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	с	с	ADP	PR	_	3	case	_	_
+3	коляской	коляска	NOUN	S,f,inan	Case=Ins|Gender=Fem|Number=Sing	1	nmod	_	_
+
+1	женщина	женщина	NOUN	S,f,anim	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	с	с	ADP	PR	_	3	case	_	_
+3	собакой	собака	NOUN	S,f,anim	Case=Ins|Gender=Fem|Number=Sing	1	nmod	_	_
+4	на	на	ADP	PR	_	5	case	_	_
+5	поводке	поводок	NOUN	S,m,inan	Case=Loc|Gender=Masc|Number=Sing	6	obl	_	_
+6	разгружала	разгружать	VERB	V,ipf,tran	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	1	amod	_	_
+7	продукты	продукт	NOUN	S,m,inan	Case=Acc|Gender=Masc|Number=Plur	6	obl	_	_
+8	на	на	ADP	PR	_	9	case	_	_
+9	асфальт	асфальт	NOUN	S,m,inan	Case=Acc|Gender=Masc|Number=Sing	7	nmod	_	_
+10	с	с	ADP	PR	_	12	case	_	_
+11	открытым	открытый	ADJ	A	Case=Ins|Degree=Pos|Gender=Masc|Number=Sing	12	amod	_	_
+12	багажником	багажник	NOUN	S,m,inan	Case=Ins|Gender=Masc|Number=Sing	9	nmod	_	_
+
+1	молодая	молодой	ADJ	A	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	2	amod	_	_
+2	пара	пар	NOUN	S,f,inan	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+3	через	через	ADP	PR	_	4	case	_	_
+4	дорогу	дорога	NOUN	S,f,inan	Case=Acc|Gender=Fem|Number=Sing	5	obl	_	_
+5	свернула	свернуть	VERB	V,pf,tran	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	2	amod	_	_
+6	с	с	ADP	PR	_	7	case	_	_
+7	тротуара	тротуар	NOUN	S,m,inan	Case=Gen|Gender=Masc|Number=Sing	5	obl	_	_
+8	на	на	ADP	PR	_	10	case	_	_
+9	проезжую	проезжый	ADJ	A	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	10	amod	_	_
+10	часть	часть	NOUN	S,f,inan	Case=Acc|Gender=Fem|Number=Sing	7	nmod	_	_
+11	они	они	PRON	SPRO,pl	Case=Nom|Number=Plur|Person=3	12	nsubj	_	_
+12	шли	идти	VERB	V,ipf,intr	Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin	2	parataxis	_	_
+13	с	с	ADP	PR	_	15	case	_	_
+14	правой	правый	ADJ	A	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	15	amod	_	_
+15	стороны	сторона	NOUN	S,f,inan	Case=Gen|Gender=Fem|Number=Sing	12	obl	_	_
+16	улицы	улица	NOUN	S,f,inan	Case=Gen|Gender=Fem|Number=Sing	15	nmod	_	_
+17	на	на	ADP	PR	_	19	case	_	_
+18	левую	левый	ADJ	A	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	19	amod	_	_
+19	женщина	женщина	NOUN	S,f,anim	Case=Nom|Gender=Fem|Number=Sing	20	obl	_	_
+20	была	быть	VERB	V,ipf,intr	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	12	conj	_	_
+21	на	на	ADP	PR	_	23	case	_	_
+22	левой	левый	ADJ	A	Case=Loc|Degree=Pos|Gender=Fem|Number=Sing	23	amod	_	_
+23	стороне	сторона	NOUN	S,f,inan	Case=Loc|Gender=Fem|Number=Sing	20	obl	_	_
+24	парковки	парковка	NOUN	S,f,inan	Case=Gen|Gender=Fem|Number=Sing	23	nmod	_	_
+
+1	пара	пара	NOUN	S,f,inan	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	свернула	свернуть	VERB	V,pf,tran	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	1	dep	_	_
+3	на	на	ADP	PR	_	4	case	_	_
+4	дорогу	дорога	NOUN	S,f,inan	Case=Acc|Gender=Fem|Number=Sing	2	obl	_	_
+
+1	мужчина	мужчина	NOUN	S,m,anim	Case=Nom|Gender=Masc|Number=Sing	2	nsubj	_	_
+2	уронил	уронить	VERB	V,pf,tran	Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	0	root	_	_
+3	мяч	мяч	NOUN	S,m,inan	Case=Acc|Gender=Masc|Number=Sing	2	obj	_	_
+
+1	тот	тот	DET	APRO	Case=Nom|Gender=Masc|Number=Sing	2	nsubj	_	_
+2	покатился	покатиться	VERB	V,pf,intr	Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	0	root	_	_
+3	под	под	ADP	PR	_	5	case	_	_
+4	подъезжающую	подъезжать	VERB	V,ipf,intr	Case=Acc|Gender=Fem|Number=Sing|Tense=Pres|VerbForm=Part	5	amod	_	_
+5	машины	машина	NOUN	S,f,inan	Case=Acc|Gender=Fem|Number=Plur	2	obl	_	_
+
+1	собака	собака	NOUN	S,f,anim	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	рванулась	рванулась	VERB	V,pf,intr	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	1	amod	_	_
+3	к	к	ADP	PR	_	4	case	_	_
+4	мячу	мяч	NOUN	S,m,inan	Case=Dat|Gender=Masc|Number=Sing	2	obl	_	_
+5	под	под	ADP	PR	_	6	case	_	_
+6	машину	машина	NOUN	S,f,inan	Case=Acc|Gender=Fem|Number=Sing	2	obl	_	_
+
+1	его	он	PRON	APRO	Case=Gen|Gender=Masc|Number=Sing|Person=3	2	nmod	_	_
+2	хозяйка	хозяйка	NOUN	S,f,anim	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+3	которая	который	PRON	APRO	Case=Nom|Gender=Fem|Number=Sing	6	nsubj	_	_
+4	выгружала	выгружать	VERB	V,ipf,tran	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	5	amod	_	_
+5	продукты	продукт	NOUN	S,m,inan	Case=Acc|Gender=Masc|Number=Plur	6	obl	_	_
+6	уронила	уронять	VERB	V,pf,tran	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	2	acl:relcl	_	_
+7	пакет	пакет	NOUN	S,m,inan	Case=Acc|Gender=Masc|Number=Sing	6	obj	_	_
+8	с	с	ADP	PR	_	9	case	_	_
+9	яблоками	яблоко	NOUN	S,n,inan	Case=Ins|Gender=Masc|Number=Plur	7	nmod	_	_
+10	на	на	ADP	PR	_	11	case	_	_
+11	дорогу	дорога	NOUN	S,f,inan	Case=Acc|Gender=Fem|Number=Sing	9	nmod	_	_
+
+1	ехали	ехать	VERB	V,ipf,intr	Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin	0	root	_	_
+2	две	два	NUM	NUM	Case=Nom|Gender=Fem	3	nummod:gov	_	_
+3	машины	машина	NOUN	S,f,inan	Case=Gen|Gender=Fem|Number=Sing	1	nsubj	_	_
+4	синяя	синий	ADJ	A	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	5	amod	_	_
+5	белая	белый	ADJ	A	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	3	amod	_	_
+
+1	они	они	PRON	SPRO,pl	Case=Nom|Number=Plur|Person=3	2	nsubj	_	_
+2	свернули	свернуть	VERB	V,pf,tran	Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin	0	root	_	_
+3	в	в	ADP	PR	_	6	case	_	_
+4	это	этот	DET	SPRO,sg,n,inan	Case=Acc|Gender=Neut|Number=Sing	6	amod	_	_
+5	проезжее	проезжый	ADJ	A	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	6	amod	_	_
+6	место	место	NOUN	S,n,inan	Case=Acc|Gender=Neut|Number=Sing	2	obl	_	_
+7	парковку	парковка	NOUN	S,f,inan	Case=Acc|Gender=Fem|Number=Sing	2	obj	_	_
+8	всё	весь	DET	APRO	Case=Nom|Gender=Neut|Number=Sing	9	amod	_	_
+9	это	это	PRON	SPRO,sg,n,inan	Case=Nom|Gender=Neut|Number=Sing	10	nsubj	_	_
+10	случилось	случиться	VERB	V,pf,intr	Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	2	conj	_	_
+11	водитель	водитель	NOUN	S,m,anim	Case=Nom|Gender=Masc|Number=Sing	13	nsubj	_	_
+12	машины	машина	NOUN	S,f,inan	Case=Gen|Gender=Fem|Number=Sing	11	nmod	_	_
+13	затормозил	затормозить	VERB	V,pf,tran	Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	10	ccomp	_	_
+14	увидел	увидеть	VERB	V,pf,tran	Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	13	dep	_	_
+15	собаку	собака	NOUN	S,f,anim	Case=Acc|Gender=Fem|Number=Sing	14	obj	_	_
+16	мяч	мяч	NOUN	S,m,inan	Case=Nom|Gender=Masc|Number=Sing	14	obl	_	_
+17	под	под	ADP	PR	_	18	case	_	_
+18	колёсами	колесо	NOUN	S,n,inan	Case=Ins|Gender=Masc|Number=Plur	16	nmod	_	_
+
+1	белая	белый	ADJ	A	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	2	amod	_	_
+2	машина	машина	NOUN	S,f,inan	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+3	врезалась	врезаться	VERB	V,pf,intr	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	7	xcomp	_	_
+4	в	в	ADP	PR	_	5	case	_	_
+5	синюю	синий	ADJ	A	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	3	obl	_	_
+6	тот	тот	DET	APRO	Case=Nom|Gender=Masc|Number=Sing	7	nsubj	_	_
+7	затормозил	затормозить	VERB	V,pf,tran	Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	2	dep	_	_
+
+1	водители	водитель	NOUN	S,m,anim	Case=Nom|Gender=Masc|Number=Plur	10	obl	_	_
+2	вышли	выйти	VERB	V,pf,intr	Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin	1	amod	_	_
+3	начали	начать	VERB	V,pf,tran	Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin	2	acl	_	_
+4	осматривать	осматривать	VERB	V,ipf,tran	VerbForm=Inf	3	xcomp	_	_
+5	их	они	PRON	SPRO,pl	Case=Gen|Number=Plur|Person=3	7	nmod	_	_
+6	поцеловавшиеся	поцеловаться	VERB	V,pf,intr	Case=Nom|Number=Plur|Tense=Past|VerbForm=Part	7	amod	_	_
+7	машины	машина	NOUN	S,f,inan	Case=Nom|Gender=Fem|Number=Plur	4	obl	_	_
+8	этот	этот	DET	APRO	Case=Nom|Gender=Masc|Number=Sing	9	amod	_	_
+9	муж	муж	NOUN	S,m,anim	Case=Nom|Gender=Masc|Number=Sing	10	nsubj	_	_
+10	забрал	забрать	VERB	V,pf	Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	0	root	_	_
+11	мяч	мяч	NOUN	S,m,inan	Case=Acc|Gender=Masc|Number=Sing	10	obj	_	_
+
+1	стал	стать	VERB	V,pf,intr	Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	0	root	_	_
+2	собирать	собирать	VERB	V,ipf,tran	VerbForm=Inf	1	xcomp	_	_
+3	яблоки	яблоко	NOUN	S,n,inan	Case=Acc|Gender=Masc|Number=Plur	2	obl	_	_
+4	бутылку	бутылка	NOUN	S,f,inan	Case=Acc|Gender=Fem|Number=Sing	3	nmod	_	_
+5	которая	который	PRON	APRO	Case=Nom|Gender=Fem|Number=Sing	6	nsubj	_	_
+6	упала	упасть	VERB	V,pf,intr	Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	4	acl:relcl	_	_
+7	класть	класть	VERB	V,ipf,tran	VerbForm=Inf	6	obl	_	_
+8	в	в	ADP	PR	_	9	case	_	_
+9	пакет	пакет	NOUN	S,m,inan	Case=Acc|Gender=Masc|Number=Sing	7	obl	_	_
+
+1	мужчины	мужчина	NOUN	S,m,anim	Case=Nom|Gender=Masc|Number=Plur	2	obl	_	_
+2	звонили	звонить	VERB	V,ipf,intr	Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin	0	root	_	_
+3	в	в	ADP	PR	_	4	case	_	_
+4	911	911	NUM	NUM	_	2	nummod	_	_
+

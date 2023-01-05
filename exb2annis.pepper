@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pepper-job id="trttqfob" version="1.0">
+  <importer name="EXMARaLDAImporter" path="./data/3/">
+	<customization>
+	</customization>
+  </importer>
+  <manipulator name="OrderRelationAdder">
+    <customization>
+      <property key="segmentation-layers">{}</property>
+    </customization>
+  </manipulator>
+  <exporter name="ANNISExporter" path="./data/4_annis/">
+    <customization>
+		<property key="corpusName">SeiKo-Preview</property>
+    </customization>
+  </exporter>
+</pepper-job>

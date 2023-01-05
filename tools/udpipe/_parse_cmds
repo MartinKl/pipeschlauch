@@ -1,0 +1,2 @@
+echo "Hallo du" | ./udpipe --parse --tag models/german-ud-2.0-170801.udpipe --input=horizontal
+echo "Ciao, bella!" | ./udpipe --parse --tag models/german-ud-2.0-170801.udpipe --input=horizontal

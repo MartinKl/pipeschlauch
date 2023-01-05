@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pepper-job id="trttqfob" version="1.0">
+  <importer name="EXMARaLDAImporter" path="./data/0/">
+	<customization>
+		<!--property key="parseNamespace">true</property-->
+	</customization>
+  </importer>
+  <manipulator name="OrderRelationAdder">
+    <customization>
+      <property key="segmentation-layers">{}</property>
+    </customization>
+  </manipulator>
+  <exporter name="CoNLLExporter" path="./data/1_conll/">
+    <customization>      
+      <property key="segmentation.name">tok_part</property>
+      <property key="cols">_,_,_,_,_,_,_</property>
+      <property key="discourse.anno.name">A04::v</property>
+    </customization>
+  </exporter>
+  <exporter name="CoNLLExporter" path="./data/1_conll-int/">
+    <customization>      
+      <property key="segmentation.name">tok_int</property>
+      <property key="cols">_,_,_,_,_,_,_</property>
+      <property key="discourse.anno.name">INT::v</property>
+    </customization>
+  </exporter>
+</pepper-job>

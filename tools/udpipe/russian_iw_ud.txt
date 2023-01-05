@@ -1,0 +1,42 @@
+# newdoc id = ../../../tree-tagger-linux-3.2/data/russian/russian_iw.txt
+# newpar
+# sent_id = 1
+1	Я	Я	PRON	PRP	Case=Nom|Number=Sing|Person=1	_	_	_	_
+2	тут	ТУТ	ADV	RB	_	_	_	_	_
+3	увидел	уВИДЕТЬ	VERB	VBC	Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+4	такую	ТАКОЙ	DET	DT	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+5	интересную	интересную	ADJ	JJL	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+6	аварию	авАРИЯ	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+7	,	,	PUNCT	,	_	_	_	_	_
+8	водитель	водитель	NOUN	NN	Animacy=Anim|Case=Nom|Gender=Masc|Number=Sing	_	_	_	_
+9	машины	МАШИНА	NOUN	NN	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	_	_	_	_
+10	испугался	испугался	VERB	VBC	Aspect=Imp|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Mid	_	_	_	_
+11	упавшего	упавшего	ADJ	JJL	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	_	_	_	_
+12	мячя	мячя	NOUN	NN	Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing	_	_	_	_
+13	и	И	CCONJ	CC	_	_	_	_	_
+14	собаки	соБАК	NOUN	NN	Animacy=Inan|Case=Gen|Gender=Fem|Number=Sing	_	_	_	_
+15	(	(	PUNCT	(	_	_	_	_	_
+16	на	НА	ADP	IN	_	_	_	_	_
+17	парковке	парковке	NOUN	NN	Animacy=Anim|Case=Loc|Gender=Fem|Number=Sing	_	_	_	_
+18	)	)	PUNCT	)	_	_	_	_	_
+19	и	И	CCONJ	CC	_	_	_	_	_
+20	машина	машина	NOUN	NN	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	_	_	_	_
+21	за	ЗА	ADP	IN	_	_	_	_	_
+22	ним	ОН	PRON	PRP	Case=Ins|Gender=Masc|Number=Sing|Person=3	_	_	_	_
+23	ие	ие	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Neut|Number=Sing	_	_	_	_
+24	успела	УСПЕТЬ	VERB	VBC	Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+25	остоновиться	остоновиться	VERB	VB	Aspect=Perf|VerbForm=Inf|Voice=Mid	_	_	_	_
+26	.	.	PUNCT	.	_	_	_	_	_
+
+# sent_id = 2
+1	Иэвини	ИэвИНИ	PROPN	NNP	Animacy=Anim|Case=Nom|Gender=Masc|Number=Sing	_	_	_	_
+2	пожаулсто	пожаулСТО	ADV	RB	_	_	_	_	_
+3	,	,	PUNCT	,	_	_	_	_	_
+4	что	ЧТО	SCONJ	IN	_	_	_	_	_
+5	я	Я	PRON	PRP	Case=Nom|Number=Sing|Person=1	_	_	_	_
+6	не	НЕ	PART	NEG	Polarity=Neg	_	_	_	_
+7	успел	УСПЕТЬ	VERB	VBC	Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin	_	_	_	_
+8	в	В	ADP	IN	_	_	_	_	_
+9	кино	КИНО	NOUN	NN	Animacy=Inan|Case=Acc|Gender=Neut|Number=Sing	_	_	_	_
+10	!	!	PUNCT	.	_	_	_	_	_
+

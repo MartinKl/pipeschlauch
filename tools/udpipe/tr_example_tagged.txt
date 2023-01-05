@@ -1,0 +1,21 @@
+# newdoc id = tr_example.txt
+# newpar
+# sent_id = 1
+1	Annesi	anne	NOUN	Noun	Case=Nom|Number=Sing|Number[psor]=Sing|Person=3|Person[psor]=3	_	_	_	_
+2	geldiğinde	gel	VERB	Verb	Aspect=Perf|Case=Loc|Mood=Ind|Number[psor]=Sing|Person[psor]=3|Polarity=Pos|Tense=Past|VerbForm=Part	_	_	_	_
+3	arabaya	araba	NOUN	Noun	Case=Dat|Number=Sing|Person=3	_	_	_	_
+4	çarpan	çarp	VERB	Verb	Aspect=Perf|Mood=Ind|Polarity=Pos|Tense=Pres|VerbForm=Part	_	_	_	_
+5	çocuğun	çocuk	NOUN	Noun	Case=Gen|Number=Sing|Person=3	_	_	_	_
+6	tüm	tüm	DET	Det	_	_	_	_	_
+7	detaylarını	detay	NOUN	Noun	Case=Acc|Number=Plur|Number[psor]=Sing|Person=3|Person[psor]=3	_	_	_	_
+8	anlattıktan	anlat	VERB	Verb	Aspect=Perf|Case=Abl|Mood=Ind|Polarity=Pos|Tense=Past|VerbForm=Part	_	_	_	_
+9	sonra	sonra	ADP	PCAbl	_	_	_	_	_
+10	gelecek	gel	ADJ	Adj	_	_	_	_	_
+11	günlerde	gün	NOUN	Noun	Case=Loc|Number=Plur|Person=3	_	_	_	_
+12	sağlığını	sağlık	NOUN	Noun	Case=Acc|Number=Sing|Number[psor]=Sing|Person=3|Person[psor]=3	_	_	_	_
+13	nasıl	nasıl	ADV	Adverb	_	_	_	_	_
+14	etkileyeceğini	etkiley	VERB	Verb	Aspect=Perf|Case=Acc|Mood=Ind|Number[psor]=Sing|Person[psor]=3|Polarity=Pos|Tense=Fut|VerbForm=Part	_	_	_	_
+15	düşünmeye	düşün	VERB	Verb	Aspect=Perf|Case=Dat|Mood=Ind|Polarity=Pos|Tense=Pres|VerbForm=Vnoun	_	_	_	_
+16	başladı	başla	VERB	Verb	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Past	_	_	_	_
+17	.	.	PUNCT	Punc	_	_	_	_	_
+

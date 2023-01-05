@@ -1,0 +1,67 @@
+# newdoc id = /home/klotzmaz/RUEG/annotation_demands/demo_daten/tr/multilit_example.txt
+# newpar
+# sent_id = 1
+1	Bana	ben	PRON	Pers	Case=Dat|Number=Sing|Person=1|PronType=Prs	_	_	_	_
+2	göre	göre	ADP	PCDat	_	_	_	_	_
+3	kopya	kop	NOUN	Noun	Case=Dat|Number=Sing|Person=3	_	_	_	_
+4	çekmek	çek	VERB	Verb	Aspect=Perf|Case=Nom|Mood=Ind|Polarity=Pos|Tense=Pres|VerbForm=Vnoun	_	_	_	_
+5	iyi	iyi	ADJ	Adj	_	_	_	_	_
+6	birşey	birşey	NOUN	Noun	Case=Nom|Number=Sing|Person=3	_	_	_	_
+
+# sent_id = 2
+1	değil	değil	VERB	Neg	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres	_	_	_	_
+2	.	.	PUNCT	Punc	_	_	_	_	_
+3	/	/	PUNCT	Punc	_	_	_	_	_
+4	Tavsiye	tavsiye	NOUN	Noun	Case=Nom|Number=Sing|Person=3	_	_	_	_
+5	etmiyorum	etm	VERB	Verb	Aspect=Prog|Mood=Ind|Number=Sing|Person=1|Polarity=Neg|Polite=Infm|Tense=Pres	_	_	_	_
+6	,	,	PUNCT	Punc	_	_	_	_	_
+7	fakat	fakat	CCONJ	Conj	_	_	_	_	_
+8	gerekli	gerekli	ADJ	Adj	_	_	_	_	_
+9	oluyor	ol	VERB	Verb	Aspect=Prog|Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Polite=Infm|Tense=Pres	_	_	_	_
+10	.	.	PUNCT	Punc	_	_	_	_	_
+11	/	/	PUNCT	Punc	_	_	_	_	_
+12	Ama	ama	CCONJ	Conj	_	_	_	_	_
+13	XX@XX	XX@XX	NOUN	Noun	Case=Nom|Number=Sing|Person=3	_	_	_	_
+14	alışganlık	alışganlık	NOUN	Noun	Case=Nom|Number=Sing|Person=3	_	_	_	_
+15	olmaması	ol	VERB	Verb	Aspect=Perf|Case=Nom|Mood=Ind|Number[psor]=Sing|Person[psor]=3|Polarity=Neg|Tense=Pres|VerbForm=Vnoun	_	_	_	_
+16	lazım	lazım	ADJ	Adj	_	_	_	_	_
+17	,	,	PUNCT	Punc	_	_	_	_	_
+18	çünkü	çünkü	CCONJ	Conj	_	_	_	_	_
+19	o	o	DET	Det	_	_	_	_	_
+20	zaman	zaman	NOUN	Noun	Case=Nom|Number=Sing|Person=3	_	_	_	_
+21	/	/	PUNCT	Punc	_	_	_	_	_
+22	artık	artık	ADV	Adverb	_	_	_	_	_
+23	hiç	hiç	ADV	Adverb	_	_	_	_	_
+24	ders	ders	NOUN	Noun	Case=Nom|Number=Sing|Person=3	_	_	_	_
+25	çalışılmıyor	çalışılm	VERB	Verb	Aspect=Prog|Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Polite=Infm|Tense=Pres|Voice=Pass	_	_	_	_
+26	.	.	PUNCT	Punc	_	_	_	_	_
+27	Durmadan	dur	VERB	Verb	Aspect=Perf|Mood=Ind|Polarity=Neg|Tense=Pres|VerbForm=Conv	_	_	_	_
+28	kopyalarla	kopyalarla	NOUN	Noun	Case=Ins|Number=Plur|Person=3	_	_	_	_
+29	/	/	PUNCT	Punc	_	_	_	_	_
+
+# sent_id = 3
+1	geçiliyor	geç	VERB	Verb	Aspect=Prog|Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Polite=Infm|Tense=Pres	_	_	_	_
+2	.	.	PUNCT	Punc	_	_	_	_	_
+
+# sent_id = 4
+1	Haketmediğin	Haketmedik	VERB	Verb	Aspect=Perf|Mood=Ind|Number[psor]=Sing|Person[psor]=2|Polarity=Pos|Tense=Past|VerbForm=Part	_	_	_	_
+2	notu	not	NOUN	Noun	Case=Acc|Number=Sing|Person=3	_	_	_	_
+3	alıyorsun	al	VERB	Verb	Aspect=Prog|Mood=Ind|Number=Sing|Person=2|Polarity=Pos|Polite=Infm|Tense=Pres	_	_	_	_
+4	,	,	PUNCT	Punc	_	_	_	_	_
+5	belki	belki	ADV	Adverb	_	_	_	_	_
+6	/	/	PUNCT	Punc	_	_	_	_	_
+7	de	de	CCONJ	Conj	_	_	_	_	_
+8	başkasının	başkas	ADJ	NAdj	Case=Gen|Number=Sing|Person=3	_	_	_	_
+9	hakkına	hak	NOUN	Noun	Case=Dat|Number=Sing|Number[psor]=Sing|Person=3|Person[psor]=3	_	_	_	_
+10	giriyorsun	gir	VERB	Verb	Aspect=Prog|Mood=Ind|Number=Sing|Person=2|Polarity=Pos|Polite=Infm|Tense=Pres	_	_	_	_
+11	.	.	PUNCT	Punc	_	_	_	_	_
+12	Kendim	kendi	PRON	Reflex	Case=Nom|Number=Sing|Number[psor]=Sing|Person=1|Person[psor]=1|Reflex=Yes	_	_	_	_
+13	çok	çok	ADV	Adverb	_	_	_	_	_
+14	/	/	PUNCT	Punc	_	_	_	_	_
+15	yapıyorum	yap	VERB	Verb	Aspect=Prog|Mood=Ind|Number=Sing|Person=1|Polarity=Pos|Polite=Infm|Tense=Pres	_	_	_	_
+16	ama	ama	CCONJ	Conj	_	_	_	_	_
+17	kimseye	kimse	NOUN	Noun	Case=Dat|Number=Sing|Person=3	_	_	_	_
+18	tavsiye	tavsiye	NOUN	Noun	Case=Nom|Number=Sing|Person=3	_	_	_	_
+19	etmiyorum	etm	VERB	Verb	Aspect=Prog|Mood=Ind|Number=Sing|Person=1|Polarity=Neg|Polite=Infm|Tense=Pres	_	_	_	_
+20	.	.	PUNCT	Punc	_	_	_	_	_
+

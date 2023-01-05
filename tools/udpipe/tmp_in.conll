@@ -1,0 +1,8 @@
+1	Тогда	тогда	ADV	ADVPRO	Degree=Pos	2	advmod	_	_
+2	тарая	второй	ADJ	ANUM	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	_	_	_	_
+3	машына	машина	NOUN	S	Animacy=Inan|Case=Nom|Gender=Fem|Number=Sing	_	_	_	_
+4	наехал	наезжать	VERB	V,intr	Aspect=Perf|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act	_	_	_	_
+5	на	на	ADP	PR	_	_	_	_	_
+6	первую	первый	ADJ	ANUM	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	_	_	_	_
+7	машыную	машина	NOUN	S	Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing	_	_	_	_
+8	.	.	PUNCT	_	_	_	_	_	_
