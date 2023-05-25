@@ -16,7 +16,7 @@
       <property key="pepper.after.renameAnnos">salt::lemma:=lemma;salt::pos:=pos</property>
     </customization>
   </importer>
-  <importer name="CoNLLImporter" path="./data/2_conll-int/SeiKo/">
+  <!--importer name="CoNLLImporter" path="./data/2_conll-int/SeiKo/">
     <customization>
       <property key="conll.textName">tok_int</property>
       <property key="conll.SENTENCE">false</property>
@@ -25,7 +25,7 @@
       <property key="pepper.after.removeAnnos">morph</property>
       <property key="pepper.after.renameAnnos">salt::lemma:=lemma_int;salt::pos:=pos_int</property>
     </customization>
-  </importer>
+  </importer-->
   <manipulator name="OrderRelationAdder">
     <customization>
       <property key="segmentation-layers">{}</property>
