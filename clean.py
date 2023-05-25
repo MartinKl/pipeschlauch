@@ -3,8 +3,9 @@ import os
 from xml.etree import ElementTree
 
 TOK = 'tok'
-INTERVIERWEE_NAME = 'tok_part'  # kannst du anfangs noch ändern
+INTERVIEWEE_NAME = 'tok_part'  # kannst du anfangs noch ändern
 INTERVIEWER_NAME = 'tok_int'  # das auch
+tok_tier_cats = {INTERVIEWEE_NAME, INTERVIEWER_NAME}
 INTERVIEWER_SPK = 'INT'
 
 ATTR_ID = 'id'
@@ -49,10 +50,12 @@ if __name__ == '__main__':
                 tier.attrib[ATTR_CAT] = INTERVIEWER_NAME
             else:
                 # is interviewee / participant tier
-                tier.attrib[ATTR_CAT] = INTERVIERWEE_NAME
+                tier.attrib[ATTR_CAT] = INTERVIEWEE_NAME
             tier.attrib[ATTR_TYPE] = 't'
-            tier.attrib['display-name'] = f'{spk_name} [{tier.attrib["category"]}]'
-        for tier in set(xml.findall('.//tier')).difference(tok_tiers):
+            tier.attrib['display-name'] = f'{spk_name} [{tier.attrib["category"]}]'        
+        for tier in xml.findall('.//tier[type!="t"]'):
+            if tier.attrib[ATTR_CAT] in tok_tier_cats:
+                continue
             tier.attrib[ATTR_TYPE] = 'a'
         out_path = os.path.join(OUT_DIR, os.path.basename(path))
         xml.write(out_path, encoding='utf-8', xml_declaration=True)
