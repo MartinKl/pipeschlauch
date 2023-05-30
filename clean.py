@@ -53,6 +53,7 @@ if __name__ == '__main__':
     if not os.path.exists(OUT_DIR):
         os.mkdir(OUT_DIR)
     for path in iglob(f'{IN_DIR}/**exb', recursive=True):
+        print('Starting', path, '...')
         xml = ElementTree.parse(path)
         project_name = xml.find('.//project-name')
         if project_name is not None:
