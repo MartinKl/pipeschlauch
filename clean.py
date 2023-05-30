@@ -46,6 +46,10 @@ def get_fixed_speaker_map(xml):
             if is_interviewee(abbr.text):
                 abbr.text = INTERVIEWEE_SPK
             spk_map[speaker.attrib[ATTR_ID]] = abbr.text
+    # add interviewer    
+    if INTERVIEWER_SPK not in set(spk_map.values()):
+        add_speaker(xml, INTERVIEWER_SPK, INTERVIEWER_SPK)
+        spk_map[INTERVIEWER_SPK] = INTERVIEWER_SPK
     return spk_map
 
 
@@ -80,7 +84,7 @@ if __name__ == '__main__':
                 tier.attrib[ATTR_CAT] = INTERVIEWEE_T_CAT
             tier.attrib[ATTR_TYPE] = 't'
             tier.attrib['display-name'] = f'{spk_name} [{tier.attrib["category"]}]'
-        if not has_interviewer:
+        if not has_interviewer:            
             interviewer_speaker_id = {v: k for k, v in speaker_map.items()}[INTERVIEWER_SPK]
             parent = xml.find('.//basic-body')
             ElementTree.SubElement(parent, 'tier', {
@@ -91,13 +95,15 @@ if __name__ == '__main__':
                 ATTR_ID: 'TIER_INT_EMPTY'
             })
         com_tier = xml.find(f'.//tier[@{ATTR_CAT}="COM"]')
-        com_tier.attrib['speaker'] = COM_SPK        
+        if com_tier is not None:
+            com_tier.attrib['speaker'] = COM_SPK        
         for tier in xml.findall('.//tier'):
             if tier.attrib[ATTR_CAT] in tok_tier_cats:
                 tier.attrib[ATTR_TYPE] = 't'
                 continue
             tier.attrib[ATTR_TYPE] = 'a'            
-            tier.attrib['display-name'] = f'{speaker_map[tier.attrib[ATTR_SPK]]} [{tier.attrib["category"]}]'
-        com_tier.attrib['type'] = 't'
+            tier.attrib['display-name'] = f'{speaker_map[tier.attrib[ATTR_SPK]]} [{tier.attrib["category"]}]'        
+        if com_tier is not None:
+            com_tier.attrib['type'] = 't'
         out_path = os.path.join(OUT_DIR, os.path.basename(path))
         xml.write(out_path, encoding='utf-8', xml_declaration=True)
