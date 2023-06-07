@@ -102,6 +102,8 @@ if __name__ == '__main__':
                 tier.attrib[ATTR_TYPE] = 't'
                 continue
             tier.attrib[ATTR_TYPE] = 'a'            
+            if ATTR_SPK not in tier.attrib:
+                tier.attrib[ATTR_SPK] = ''
             tier.attrib['display-name'] = f'{speaker_map[tier.attrib[ATTR_SPK]]} [{tier.attrib["category"]}]'        
         if com_tier is not None:
             com_tier.attrib['type'] = 't'
