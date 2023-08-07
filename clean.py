@@ -135,7 +135,9 @@ if __name__ == '__main__':
                 tier.attrib[ATTR_SPK] = speaker
             tier.attrib[ATTR_TYPE] = tier_type
         # rewrite v
-        for old_speaker in ('SPK0', 'SPK1'):
+        for old_speaker in ('SPK0', 'SPK1', 'SPK2'):
+            if old_speaker not in speaker_map:
+                continue
             new_speaker = f'{speaker_map[old_speaker]}_CLEAN'
             tier = xml.find(f'.//tier[@{ATTR_CAT}="v"][@{ATTR_SPK}="{old_speaker}"]')
             if tier is None:
