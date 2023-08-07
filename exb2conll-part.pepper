@@ -10,11 +10,12 @@
       <property key="segmentation-layers">{}</property>
     </customization>
   </manipulator>
+  <!--exporter name="DoNothingExporter" path="/dev/null"/-->
   <exporter name="CoNLLExporter" path="./data/1_conll/">
     <customization>      
-      <property key="segmentation.name">tok_part</property>
+      <property key="segmentation.name">tok_part_clean</property>
       <property key="cols">_,_,_,_,_,_,_</property>
-      <property key="discourse.anno.name">PART::v</property>
+      <property key="discourse.anno.name">PART_CLEAN::v</property>
     </customization>
   </exporter>
 </pepper-job>

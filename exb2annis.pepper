@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pepper-job id="trttqfob" version="1.0">
-  <importer name="EXMARaLDAImporter" path="./data/3/">
+  <importer name="EXMARaLDAImporter" path="./data/4/">
 	<customization>
 	</customization>
   </importer>
   <manipulator name="OrderRelationAdder">
     <customization>
-      <property key="segmentation-layers">{}</property>
+      <property key="segmentation-layers">{part_tok,part_tok_clean,int_tok,int_tok_clean}</property>
     </customization>
   </manipulator>
-  <exporter name="ANNISExporter" path="./data/4_annis/">
+  <exporter name="ANNISExporter" path="./data/5_annis/">
     <customization>
 		<property key="corpusName">SeiKo-Preview</property>
     </customization>

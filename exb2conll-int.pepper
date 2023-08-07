@@ -7,12 +7,12 @@
   </importer>
   <manipulator name="OrderRelationAdder">
     <customization>
-      <property key="segmentation-layers">{}</property>
+      <property key="segmentation-layers">{part_tok,part_tok_clean,int_tok,int_tok_clean}</property>
     </customization>
   </manipulator>
   <exporter name="CoNLLExporter" path="./data/1_conll-int/">
     <customization>      
-      <property key="segmentation.name">tok_int</property>
+      <property key="segmentation.name">tok_int_clean</property>
       <property key="cols">_,_,_,_,_,_,_</property>
       <property key="discourse.anno.name">INT::v</property>
     </customization>
