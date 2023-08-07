@@ -130,6 +130,7 @@ if __name__ == '__main__':
                 print('WARNING: Tier', category, 'does not exist!')
                 if required:
                     exit(1)            
+                continue
             tier.attrib[ATTR_SPK] = speaker
             tier.attrib[ATTR_TYPE] = tier_type
         out_path = os.path.join(OUT_DIR, os.path.basename(path))
