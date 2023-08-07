@@ -10,9 +10,9 @@ INTERVIEWEE_T_CAT_CLEAN = 'tok_part_clean'
 INTERVIEWER_T_CAT_CLEAN = 'tok_int_clean'
 tok_tier_cats = {INTERVIEWEE_T_CAT, INTERVIEWER_T_CAT}
 INTERVIEWER_SPK = 'INT'
-INTERVIEWER_SPK_CLEAN = 'INT'
+INTERVIEWER_SPK_CLEAN = 'INT_CLEAN'
 INTERVIEWEE_SPK = 'PART'
-INTERVIEWEE_SPK_CLEAN = 'PART'
+INTERVIEWEE_SPK_CLEAN = 'PART_CLEAN'
 COM_SPK = 'SPKCOM'
 COM_ABBR = 'COM'
 
@@ -25,9 +25,9 @@ IN_DIR = 'data/original'
 OUT_DIR = 'data/0/SeiKo/'
 
 REQUIREMENTS = [  # the final boolean value is a requirement flag -- this flag is problematic, just use it for now
-    ('t', INTERVIEWEE_SPK, INTERVIEWEE_T_CAT, True),
+    ('t', None, INTERVIEWEE_T_CAT, True),
     ('t', INTERVIEWEE_SPK_CLEAN, INTERVIEWEE_T_CAT_CLEAN, True),
-    ('t', INTERVIEWER_SPK, INTERVIEWER_T_CAT, False),
+    ('t', None, INTERVIEWER_T_CAT, False),
     ('t', INTERVIEWER_SPK_CLEAN, INTERVIEWER_T_CAT_CLEAN, False),
     ('t', COM_ABBR, COM_ABBR, False)
 ]
@@ -131,7 +131,16 @@ if __name__ == '__main__':
                 if required:
                     exit(1)            
                 continue
-            tier.attrib[ATTR_SPK] = speaker
+            if speaker is not None:
+                tier.attrib[ATTR_SPK] = speaker
             tier.attrib[ATTR_TYPE] = tier_type
+        # rewrite v
+        for old_speaker in ('SPK0', 'SPK1'):
+            new_speaker = f'{speaker_map[old_speaker]}_CLEAN'
+            tier = xml.find(f'.//tier[@{ATTR_CAT}="v"][@{ATTR_SPK}="{old_speaker}"]')
+            if tier is None:
+                print('No v tier for', old_speaker, '/', speaker_map[old_speaker])
+            else:
+                tier[ATTR_SPK] = new_speaker
         out_path = os.path.join(OUT_DIR, os.path.basename(path))
         xml.write(out_path, encoding='utf-8', xml_declaration=True)
