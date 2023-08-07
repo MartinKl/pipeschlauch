@@ -29,7 +29,7 @@ REQUIREMENTS = [  # the final boolean value is a requirement flag -- this flag i
     ('t', INTERVIEWEE_SPK_CLEAN, INTERVIEWEE_T_CAT_CLEAN, True),
     ('t', INTERVIEWER_SPK, INTERVIEWER_T_CAT, False),
     ('t', INTERVIEWER_SPK_CLEAN, INTERVIEWER_T_CAT_CLEAN, False),
-    ('t', COM_ABBR, COM_ABBR, false)
+    ('t', COM_ABBR, COM_ABBR, False)
 ]
 
 
