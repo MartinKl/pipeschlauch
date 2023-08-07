@@ -141,6 +141,6 @@ if __name__ == '__main__':
             if tier is None:
                 print('No v tier for', old_speaker, '/', speaker_map[old_speaker])
             else:
-                tier[ATTR_SPK] = new_speaker
+                tier.attrib[ATTR_SPK] = new_speaker
         out_path = os.path.join(OUT_DIR, os.path.basename(path))
         xml.write(out_path, encoding='utf-8', xml_declaration=True)
