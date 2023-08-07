@@ -4,11 +4,15 @@ import re
 from xml.etree import ElementTree
 
 TOK = 'tok'
-INTERVIEWEE_T_CAT = 'tok_part'  # kannst du anfangs noch ändern
-INTERVIEWER_T_CAT = 'tok_int'  # das auch
+INTERVIEWEE_T_CAT = 'tok_part'
+INTERVIEWER_T_CAT = 'tok_int'
+INTERVIEWEE_T_CAT_CLEAN = 'tok_part_clean'
+INTERVIEWER_T_CAT_CLEAN = 'tok_int_clean'
 tok_tier_cats = {INTERVIEWEE_T_CAT, INTERVIEWER_T_CAT}
 INTERVIEWER_SPK = 'INT'
+INTERVIEWER_SPK_CLEAN = 'INT'
 INTERVIEWEE_SPK = 'PART'
+INTERVIEWEE_SPK_CLEAN = 'PART'
 COM_SPK = 'SPKCOM'
 COM_ABBR = 'COM'
 
@@ -19,6 +23,14 @@ ATTR_TYPE = 'type'
 
 IN_DIR = 'data/original'
 OUT_DIR = 'data/0/SeiKo/'
+
+REQUIREMENTS = [
+    ('t', INTERVIEWEE_SPK, INTERVIEWEE_T_CAT),
+    ('t', INTERVIEWEE_SPK_CLEAN, INTERVIEWEE_T_CAT_CLEAN),
+    ('t', INTERVIEWER_SPK, INTERVIEWER_T_CAT),
+    ('t', INTERVIEWER_SPK_CLEAN, INTERVIEWER_T_CAT_CLEAN),
+    ('t', COM_ABBR, COM_ABBR)
+]
 
 
 def is_interviewee(abbr):
@@ -35,10 +47,15 @@ def add_speaker(xml, speaker_id, speaker_abbr):
 
 def get_fixed_speaker_map(xml):
     spk_map = {}
-    # add com speaker
-    if xml.find(f'.//speakertable/speaker[@id="{COM_SPK}"]') is None:
-        add_speaker(xml, COM_SPK, COM_ABBR)
-        spk_map[''] = COM_ABBR
+    speaker_table = xml.find(f'.//speakertable')
+    # add missing speakers
+    existing_speaker_abbrs = {s.text for s in xml.find(f'.//speakertable/speaker/abbreviation')}
+    for (speaker_id, speaker_abbr) in [(COM_SPK, COM_ABBR), 
+                                       (INTERVIEWEE_SPK_CLEAN, INTERVIEWEE_SPK_CLEAN),
+                                       (INTERVIEWER_SPK_CLEAN, INTERVIEWER_SPK_CLEAN)]:
+        if speaker_abbr not in existing_speaker_abbrs:
+            add_speaker(xml, speaker_id, speaker_abbr)
+    spk_map[''] = COM_ABBR  # default speaker, we should soon get rid of this dirty workaround
     # collect
     for speaker in xml.findall(f'.//speakertable/speaker'):
         abbr = speaker.find('abbreviation')
@@ -107,5 +124,12 @@ if __name__ == '__main__':
             tier.attrib['display-name'] = f'{speaker_map[tier.attrib[ATTR_SPK]]} [{tier.attrib["category"]}]'        
         if com_tier is not None:
             com_tier.attrib['type'] = 't'
+        for tier_type, speaker, category in REQUIREMENTS:
+            tier = xml.find(f'.//tier[@{ATTR_CAT}="{category}"]')
+            if tier is None:
+                print('WARNING: Tier', category, 'does not exist!')
+                exit(1)            
+            tier.attrib[ATTR_SPK] = speaker
+            tier.attrib[ATTR_TYPE] = tier_type
         out_path = os.path.join(OUT_DIR, os.path.basename(path))
         xml.write(out_path, encoding='utf-8', xml_declaration=True)
