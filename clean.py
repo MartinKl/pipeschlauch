@@ -24,12 +24,12 @@ ATTR_TYPE = 'type'
 IN_DIR = 'data/original'
 OUT_DIR = 'data/0/SeiKo/'
 
-REQUIREMENTS = [
-    ('t', INTERVIEWEE_SPK, INTERVIEWEE_T_CAT),
-    ('t', INTERVIEWEE_SPK_CLEAN, INTERVIEWEE_T_CAT_CLEAN),
-    ('t', INTERVIEWER_SPK, INTERVIEWER_T_CAT),
-    ('t', INTERVIEWER_SPK_CLEAN, INTERVIEWER_T_CAT_CLEAN),
-    ('t', COM_ABBR, COM_ABBR)
+REQUIREMENTS = [  # the final boolean value is a requirement flag -- this flag is problematic, just use it for now
+    ('t', INTERVIEWEE_SPK, INTERVIEWEE_T_CAT, True),
+    ('t', INTERVIEWEE_SPK_CLEAN, INTERVIEWEE_T_CAT_CLEAN, True),
+    ('t', INTERVIEWER_SPK, INTERVIEWER_T_CAT, False),
+    ('t', INTERVIEWER_SPK_CLEAN, INTERVIEWER_T_CAT_CLEAN, False),
+    ('t', COM_ABBR, COM_ABBR, false)
 ]
 
 
@@ -124,11 +124,12 @@ if __name__ == '__main__':
             tier.attrib['display-name'] = f'{speaker_map[tier.attrib[ATTR_SPK]]} [{tier.attrib["category"]}]'        
         if com_tier is not None:
             com_tier.attrib['type'] = 't'
-        for tier_type, speaker, category in REQUIREMENTS:
+        for tier_type, speaker, category, required in REQUIREMENTS:
             tier = xml.find(f'.//tier[@{ATTR_CAT}="{category}"]')
             if tier is None:
                 print('WARNING: Tier', category, 'does not exist!')
-                exit(1)            
+                if required:
+                    exit(1)            
             tier.attrib[ATTR_SPK] = speaker
             tier.attrib[ATTR_TYPE] = tier_type
         out_path = os.path.join(OUT_DIR, os.path.basename(path))
