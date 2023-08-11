@@ -137,8 +137,13 @@ if __name__ == '__main__':
         # rewrite v
         for old_speaker in ('SPK0', 'SPK1', 'SPK2'):
             if old_speaker not in speaker_map:
+                print(old_speaker, 'not in speaker_map')
                 continue
-            new_speaker = f'{speaker_map[old_speaker]}_CLEAN'
+            abbr = speaker_map[old_speaker]
+            if abbr == 'INT':
+                new_speaker = f'INT_CLEAN'
+            else:
+                new_speaker = f'PART_CLEAN'
             tier = xml.find(f'.//tier[@{ATTR_CAT}="v"][@{ATTR_SPK}="{old_speaker}"]')
             if tier is None:
                 print('No v tier for', old_speaker, '/', speaker_map[old_speaker])
