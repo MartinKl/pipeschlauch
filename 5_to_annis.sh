@@ -3,5 +3,5 @@ cd tools/pepper/
 if [[ $? -eq 0 ]]
 then
 	cd ../../
-	zip annis-preview.zip -r data/4_annis/
+	zip annis-preview.zip -r data/5_annis/
 fi
