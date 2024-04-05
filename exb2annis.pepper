@@ -6,7 +6,7 @@
   </importer>
   <manipulator name="OrderRelationAdder">
     <customization>
-      <property key="segmentation-layers">{part_tok,part_tok_clean,int_tok,int_tok_clean}</property>
+      <property key="segmentation-layers">{int_tok,ctok_part,tok_part}</property>
     </customization>
   </manipulator>
   <exporter name="ANNISExporter" path="./data/5_annis/">
