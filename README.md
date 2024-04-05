@@ -9,5 +9,5 @@
 + PART_CLEAN::unit ist eine Kopie der ursprünglichen unit-Ebene
 + tok_part-Token müssen entweder von einer unit-Spanne oder einer exclude-Spanne überspannt werden (es sei denn, es handelt sich um Pausenmarker, die eh gelöscht werden)
 + ist Letzteres nicht der Fall, lassen sich die getaggten CoNLL-Dateien nicht wieder mit den EXMARaLDA-Dateien zusammenbringen
-
++ leere Events (weißes Feld in EXMARaLDA ohne Textwert) bringen den XML-Parser u. U. zum Absturz und sollten daher vermieden werden
 
