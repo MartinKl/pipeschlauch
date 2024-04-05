@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pepper-job id="trttqfob" version="1.0">
-  <importer name="EXMARaLDAImporter" path="./data/0/SeiKo/">
-    <customization>
-	  <property key="mapTimeline">true</property>
-      <property key="mapSpeakerMetadata">true</property>
-    </customization>
-  </importer>
-  <importer name="CoNLLImporter" path="./data/2_conll/SeiKo/">
-    <customization>
-      <property key="conll.textName">ctok_part</property>
-      <property key="conll.SENTENCE">false</property>
-      <property key="conll.KeyValFeatures">false</property>
-      <property key="conll.splitFeatures">false</property>
-      <property key="pepper.after.removeAnnos">morph</property>
-      <property key="pepper.after.renameAnnos">salt::lemma:=lemma;salt::pos:=pos</property>
-    </customization>
-  </importer>
-  <importer name="CoNLLImporter" path="./data/2_conll/SeiKo/">
-    <customization>
-      <property key="conll.textName">ctok_part</property>
-      <property key="conll.SENTENCE">false</property>
-      <property key="conll.KeyValFeatures">false</property>
-      <property key="conll.splitFeatures">false</property>
-      <property key="pepper.after.removeAnnos">morph</property>
-      <property key="pepper.after.renameAnnos">salt::lemma:=auto_lemma;salt::pos:=auto_pos</property>
-    </customization>
-  </importer>
-  <manipulator name="Merger">
-    <customization>
-      <property key="firstAsBase">true</property>
-      <property key="onlyMergeTextsWithSameName">true</property>
-    </customization>
-  </manipulator>
-  <exporter name="EXMARaLDAExporter" path="./data/4/"/>
+	<importer name="EXMARaLDAImporter" path="./data/0/SeiKo/">
+		<customization>
+		  <property key="mapTimeline">true</property>
+		  <property key="mapSpeakerMetadata">true</property>
+		</customization>
+	</importer>
+	<importer name="TreetaggerImporter" path="./data/2/SeiKo/">
+		<customization>
+			<property key="treetagger.input.textName">ctok_part</property>
+			<property key="pepper.after.renameAnnos">salt::lemma:=lemma;salt::pos:=pos</property>
+		</customization>
+	</importer>
+	<importer name="TreetaggerImporter" path="./data/2/SeiKo/">
+		<customization>
+			<property key="treetagger.input.textName">ctok_part</property>
+			<property key="pepper.after.renameAnnos">salt::lemma:=auto_lemma;salt::pos:=auto_pos</property>
+		</customization>
+	</importer>
+	<manipulator name="Merger">
+		<customization>
+			<property key="firstAsBase">true</property>
+			<property key="onlyMergeTextsWithSameName">true</property>
+			<property key="punctuations">'.'</property>
+		</customization>
+	</manipulator>
+	<exporter name="EXMARaLDAExporter" path="./data/3/">
+	</exporter>
 </pepper-job>

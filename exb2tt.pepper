@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pepper-job id="exb2treetagger" version="1.0">
+    <importer name="EXMARaLDAImporter" path="./data/0/SeiKo/"></importer>
+    <manipulator name="OrderRelationAdder">
+        <customization>
+            <property key="segmentation-layers">{}</property>
+            <property key="mapSpeakerMetadata">false</property> <!-- doesn't seem to have any effect -->
+        </customization>
+    </manipulator>
+    <exporter name="TreetaggerExporter" path="./data/1/">
+        <customization>
+            <property key="treetagger.segmentation.name">ctok_part</property>
+            <property key="treetagger.output.replaceGenericSpanNames">true</property>
+        </customization>
+    </exporter>
+</pepper-job>
