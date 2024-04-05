@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pepper-job id="trttqfob" version="1.0">
-  <importer name="EXMARaLDAImporter" path="./data/3/SeiKo/">
+  <importer name="EXMARaLDAImporter" path="./data/01/SeiKo/">
     <customization>
 	  <property key="mapTimeline">true</property>
       <property key="mapSpeakerMetadata">true</property>
@@ -8,7 +8,7 @@
   </importer>
   <importer name="CoNLLImporter" path="./data/2_conll/SeiKo/">
     <customization>
-      <property key="conll.textName">tok_part_clean</property>
+      <property key="conll.textName">ctok_part</property>
       <property key="conll.SENTENCE">false</property>
       <property key="conll.KeyValFeatures">false</property>
       <property key="conll.splitFeatures">false</property>
@@ -16,16 +16,6 @@
       <property key="pepper.after.renameAnnos">salt::lemma:=lemma;salt::pos:=pos</property>
     </customization>
   </importer>
-  <!--importer name="CoNLLImporter" path="./data/2_conll-int/SeiKo/">
-    <customization>
-      <property key="conll.textName">tok_int</property>
-      <property key="conll.SENTENCE">false</property>
-      <property key="conll.KeyValFeatures">false</property>
-      <property key="conll.splitFeatures">false</property>
-      <property key="pepper.after.removeAnnos">morph</property>
-      <property key="pepper.after.renameAnnos">salt::lemma:=lemma_int;salt::pos:=pos_int</property>
-    </customization>
-  </importer-->
   <manipulator name="Merger">
     <customization>
       <property key="firstAsBase">true</property>

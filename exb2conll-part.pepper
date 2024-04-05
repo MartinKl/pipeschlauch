@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pepper-job id="trttqfob" version="1.0">
-  <importer name="EXMARaLDAImporter" path="./data/0/">
+  <importer name="EXMARaLDAImporter" path="./data/01/SeiKo/">
 	<customization>
 		<!--property key="parseNamespace">true</property-->
 	</customization>
@@ -13,7 +13,8 @@
   <!--exporter name="DoNothingExporter" path="/dev/null"/-->
   <exporter name="CoNLLExporter" path="./data/1_conll/">
     <customization>      
-      <property key="segmentation.name">tok_part_clean</property>
+	  <property key="output.flatten">false</property>
+      <property key="segmentation.name">ctok_part</property>
       <property key="cols">_,_,_,_,_,_,_</property>
       <property key="discourse.anno.name">PART_CLEAN::v</property>
     </customization>
