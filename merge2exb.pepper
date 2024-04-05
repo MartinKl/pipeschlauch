@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pepper-job id="trttqfob" version="1.0">
-  <importer name="EXMARaLDAImporter" path="./data/01/SeiKo/">
+  <importer name="EXMARaLDAImporter" path="./data/0/SeiKo/">
     <customization>
 	  <property key="mapTimeline">true</property>
       <property key="mapSpeakerMetadata">true</property>
