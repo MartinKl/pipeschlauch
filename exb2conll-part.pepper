@@ -16,7 +16,7 @@
 	  <property key="output.flatten">false</property>
       <property key="segmentation.name">ctok_part</property>
       <property key="cols">_,_,_,_,_,_,_</property>
-      <property key="discourse.anno.name">PART_CLEAN::v</property>
+      <property key="discourse.anno.name">PART_CLEAN::unit</property>
     </customization>
   </exporter>
 </pepper-job>

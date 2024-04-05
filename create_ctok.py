@@ -80,28 +80,28 @@ def create_ctok(path, output_path, excl_pattern, overwrite=False):
                                             speaker=f'c{excl_spk}',
                                             category=f'c{tok_name}',
                                             type='t'))
-    v_tier = exb.find(f'.//tier[@category="v"][@speaker="{excl_spk}"]')
+    v_tier = exb.find(f'.//tier[@category="unit"][@speaker="{excl_spk}"]')
     groups = []
     for event in v_tier:
         start = tl.index(event.attrib['start'])
         end = tl.index(event.attrib['end'])
-        groups.append(set(range(start, end)))
+        groups.append((set(range(start, end)), event.text))
 
     v_clean_tier = ElementTree.SubElement(parent,
                                           'tier',
                                           dict(id=f'TIE{len(parent)}',
                                                speaker=f'c{excl_spk}',
                                                type='a',
-                                               category='v'))
+                                               category='unit'))
     for event in sorted(tok_tier, key=lambda e: tl.index(e.attrib['start'])):
         time_slot = (event.attrib['start'], event.attrib['end'])
         if time_slot not in forbidden_intervals and not re.match(excl_pattern, event.text.strip()):
             ElementTree.SubElement(ctok_tier, 'event', dict(start=time_slot[0], end=time_slot[1])).text = event.text
             index = tl.index(time_slot[0])
-            for g in groups:
+            for (g, label) in groups:
                 if index in g:
-                    ElementTree.SubElement(v_clean_tier, 'event', dict(start=tl[min(g)], end=tl[max(g) + 1])).text = 'v'
-                    groups.remove(g)
+                    ElementTree.SubElement(v_clean_tier, 'event', dict(start=tl[min(g)], end=tl[max(g) + 1])).text = label
+                    groups.remove((g, label))
                     break
     exb.write(output_path, encoding='utf-8', xml_declaration=True)
 
@@ -112,7 +112,7 @@ if __name__ == '__main__':
     parser.add_argument('target_file_or_dir', type=str, help='Path to write output to.')
     parser.add_argument('--excl-values',
                         type=str,
-                        default=r'•|([0-9][0-9]?)',
+                        default=r'•|([0-9][0-9]?)|(\([0-9]+\.[0-9]+\))',
                         help='Regex describing further values to exclude')
     parser.add_argument('--overwrite', action='store_true', help='overwrite existing ctok tier.')
     args = parser.parse_args()
