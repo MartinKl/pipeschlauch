@@ -1,38 +1,32 @@
 from argparse import ArgumentParser
 import os
 import re
+import sys
 from xml.etree import ElementTree
 
 
 def read_timeline(exb):
-    tlis = exb.findall('.//common-timeline/tli')
-    tlis_with_t = list(map(lambda e: e.attrib['id'],
-                           sorted(filter(lambda t: 'time' in t.attrib, tlis),
-                                  key=lambda t: float(t.attrib['time']))))
-    tlis_without_t = list(map(lambda e: e.attrib['id'],
-                              sorted(filter(lambda t: 'time' not in t.attrib, tlis),
-                                     key=lambda t: (tlis_with_t.index(t.attrib['id'].split('.')[0]), int(t.attrib['id'].split('.')[-1]))
-                                     )
-                              )
-                          )
-    ordered_items = []
-    last_stop = 0
-    needs_time_value = []
-    for id_ in tlis_with_t:
-        if needs_time_value:
-            end_time = float(exb.find(f'.//common-timeline/tli[@id="{id_}"]').attrib['time'])
-            step = (end_time - start_time) / (len(needs_time_value) + 1)
-            for untimed_id in needs_time_value:
-                start_time += step
-                exb.find(f'.//common-timeline/tli[@id="{untimed_id}"]').attrib['time'] = str(start_time)
-            needs_time_value.clear()
-        ordered_items.append(id_)
-        start_time = float(exb.find(f'.//common-timeline/tli[@id="{id_}"]').attrib['time'])
-        while last_stop < len(tlis_without_t) and tlis_without_t[last_stop].startswith(f'{id_}.'):
-            ordered_items.append(tlis_without_t[last_stop])
-            needs_time_value.append(tlis_without_t[last_stop])
-            last_stop += 1
-    return ordered_items
+    if int(sys.version[0]) < 3 or int(sys.version[2:4]) < 7:
+        raise RuntimeError("Python version is too old. You need at least python 3.7 since this script relies on dict"
+                           " insertion order.")
+    tlis = exb.findall('.//common-timeline/tli')  # provides tlis in original order from python 3.7
+    ordered_ids = []
+    needs_time = []
+    for tli in tlis:
+        if not 'time' in tli.attrib:
+            needs_time.append(len(ordered_ids))
+        elif needs_time:
+            step = (float(tli.attrib['time']) - last_time) / (len(needs_time) + 1)
+            for index in needs_time:
+                last_time += step
+                untimed_tli = exb.find(f'.//tli[@id="{ordered_ids[index]}"]')
+                untimed_tli.attrib['time'] = str(last_time)
+            needs_time.clear()
+            last_time = float(tli.attrib['time'])
+        else:
+            last_time = float(tli.attrib['time'])
+        ordered_ids.append(tli.attrib['id'])
+    return ordered_ids
 
 
 def read_speaker_table(exb):
@@ -52,6 +46,7 @@ def add_speaker(exb, id_, abbr):
 
 
 def create_ctok(path, output_path, excl_pattern, overwrite=False):
+    print('Starting', path, '...')
     exb = ElementTree.parse(path)
     parent = exb.find('.//basic-body')
     tl = read_timeline(exb)
@@ -62,16 +57,20 @@ def create_ctok(path, output_path, excl_pattern, overwrite=False):
         parent.remove(existing_ctok)
     excl_name = 'excl'
     tok_tier = exb.find(f'.//tier[@category="{tok_name}"]')
-    excl_tier = exb.find(f'.//tier[@category="{excl_name}"]')
-    excl_spk = excl_tier.attrib['speaker']
-    excl_regions = [(event.attrib['start'], event.attrib['end']) for event in excl_tier]
+    if tok_tier is None:
+        print(f'{path} does not have a tier `{tok_name}` and is skipped.')
+        return
     forbidden_intervals = set()
-    for start_id, end_id in excl_regions:
-        start_i = tl.index(start_id)
-        end_i = tl.index(end_id)
-        forbidden_intervals.update((tl[a], tl[a + 1]) for a in range(start_i, end_i))
-    if parent is None:
-        raise ValueError
+    excl_tier = exb.find(f'.//tier[@category="{excl_name}"]')
+    if excl_tier is None:
+        print(f'{path} does not have a tier `{excl_name}` and is skipped.')
+    else:
+        excl_spk = excl_tier.attrib['speaker']
+        excl_regions = [(event.attrib['start'], event.attrib['end']) for event in excl_tier]
+        for start_id, end_id in excl_regions:
+            start_i = tl.index(start_id)
+            end_i = tl.index(end_id)
+            forbidden_intervals.update((tl[a], tl[a + 1]) for a in range(start_i, end_i))
     tier_id = f'TIE{len(parent)}'
     add_speaker(exb,f'c{excl_spk}', f'PART_CLEAN')
     ctok_tier = ElementTree.SubElement(parent,

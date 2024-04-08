@@ -10,12 +10,14 @@
 		<customization>
 			<property key="treetagger.input.textName">ctok_part</property>
 			<property key="pepper.after.renameAnnos">salt::lemma:=lemma;salt::pos:=pos</property>
+			<property key="pepper.after.removeAnnos">unit;PART_CLEAN::unit;</property>
 		</customization>
 	</importer>
 	<importer name="TreetaggerImporter" path="./data/2/SeiKo/">
 		<customization>
 			<property key="treetagger.input.textName">ctok_part</property>
 			<property key="pepper.after.renameAnnos">salt::lemma:=auto_lemma;salt::pos:=auto_pos</property>
+			<property key="pepper.after.removeAnnos">unit;PART_CLEAN::unit;</property>
 		</customization>
 	</importer>
 	<manipulator name="Merger">
