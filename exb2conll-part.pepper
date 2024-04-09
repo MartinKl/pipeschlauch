@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pepper-job id="trttqfob" version="1.0">
-  <importer name="EXMARaLDAImporter" path="./data/0/SeiKo/">
+  <importer name="EXMARaLDAImporter" path="./data/1/SeiKo/">
 	<customization>
 		<!--property key="parseNamespace">true</property-->
 	</customization>
@@ -11,7 +11,7 @@
     </customization>
   </manipulator>
   <!--exporter name="DoNothingExporter" path="/dev/null"/-->
-  <exporter name="CoNLLExporter" path="./data/1_conll/">
+  <exporter name="CoNLLExporter" path="./data/2/">
     <customization>      
 	  <property key="output.flatten">false</property>
       <property key="segmentation.name">ctok_part</property>
