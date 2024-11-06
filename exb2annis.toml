@@ -1,0 +1,18 @@
+[[import]]
+format = "exmaralda"
+path = "./data/4/"
+config = {}
+
+[[graph_op]]
+action = "revise"
+
+[graph_op.config.node_names]
+"4" = "Seiko-Preview"
+
+[[export]]
+format = "graphml"
+path = "./data/5_annis/"
+
+[export.config]
+guess_vis = true
+zip = true
