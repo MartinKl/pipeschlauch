@@ -1,0 +1,6 @@
+[[rules]]                                                                         
+query = "annis:node_name=/4.+/"
+target = 1                                                                        
+ns = "annis"                                                                           
+name = "node_name"                                                                     
+value = {target = 1, replacements = [["(4)(/.*)", "SeiKo-Preview${2}"]]}

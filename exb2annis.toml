@@ -7,7 +7,13 @@ config = {}
 action = "revise"
 
 [graph_op.config.node_names]
-"4" = "Seiko-Preview"
+"4" = "SeiKo-Preview"
+
+[[graph_op]]
+action = "map"
+
+[graph_op.config]
+rule_file = "rename_rules.toml"
 
 [[export]]
 format = "graphml"
