@@ -3,17 +3,49 @@ format = "exmaralda"
 path = "./data/4/"
 config = {}
 
-[[graph_op]]
-action = "revise"
+[[import]]
+format = "meta"
+path = "./data/meta/"
 
-[graph_op.config.node_names]
-"4" = "SeiKo-Preview"
+[import.config]
+identifier = "filename"
+delimiter = "\t"
 
 [[graph_op]]
 action = "map"
 
 [graph_op.config]
 rule_file = "rename_rules.toml"
+
+[[graph_op]]
+action = "link"
+
+[graph_op.config]
+source_query = "src:id"
+source_node = 1
+source_value = [1]
+target_query = "tgt:id"
+target_node = 1
+target_value = [1]
+component = { ctype = "Pointing", layer = "", name = "merge" }
+
+[[graph_op]]
+action = "collapse"
+
+[graph_op.config]
+component = { ctype = "Pointing", layer = "", name = "merge" }
+disjoint = true
+
+[[graph_op]]
+action = "revise"
+
+[graph_op.config.node_names]
+"4" = "SeiKo-Preview"
+"meta" = "SeiKo-Preview"
+
+[[graph_op.config.remove_match]]
+query = "annis:node_type=/corpus/ & annis:node_type=/node/? !@* #1"
+remove = [1]
 
 [[export]]
 format = "graphml"

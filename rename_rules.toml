@@ -1,3 +1,17 @@
+[[rules]]
+query = "annis:node_name=/meta..+/ _ident_ annis:node_type=/corpus/"
+target = 1
+ns = "src"
+name = "id"
+value = {target = 1, replacements = [["(meta/)(.*)", "${2}"]]}
+
+[[rules]]
+query = "annis:node_name=/4..+/ _ident_ annis:node_type=/corpus/"
+target = 1
+ns = "tgt"
+name = "id"
+value = {target = 1, replacements = [["(4/)(.*)", "${2}"]]}
+
 [[rules]]                                                                         
 query = "annis:node_name=/4.+/"
 target = 1                                                                        
