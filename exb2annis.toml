@@ -47,6 +47,17 @@ action = "revise"
 query = "annis:node_type=/corpus/ & annis:node_type=/node/? !@* #1"
 remove = [1]
 
+[[graph_op]]
+action = "check"
+
+[graph_op.config]
+report = "list"
+
+[[graph_op.config.tests]]
+query = "tok"
+expected = [1, inf]
+description = "There are tokens"
+
 [[export]]
 format = "graphml"
 path = "./data/5_annis/"
