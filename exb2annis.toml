@@ -58,6 +58,11 @@ query = "tok"
 expected = [1, inf]
 description = "There are tokens"
 
+# [[graph_op.config.tests.layers]]
+# pos = [ "PRON", "VERB", "DET", "NOUN" ]
+# cat = [ "DP", "IP", "CP" ]
+# sentence = [ "1" ]
+
 [[export]]
 format = "graphml"
 path = "./data/5_annis/"
