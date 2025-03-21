@@ -1,1 +1,1 @@
-./annatto run exb2tt.toml
+./annatto run --in-memory exb2tt.toml
