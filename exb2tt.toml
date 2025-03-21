@@ -1,0 +1,13 @@
+[[import]]
+format = "exmaralda"
+path = "./data/1/SeiKo/"
+config = {}
+
+[[export]]
+format = "sequence"
+path = "./data/2/SeiKo/"
+
+[export.config]
+component = { ctype = "Ordering", layer = "annis", name = "ctok_part" }
+groupby = "PART_CLEAN::unit"
+anno = "PART_CLEAN::ctok_part"
