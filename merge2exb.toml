@@ -117,8 +117,3 @@ from = "part::i"
 format = "exmaralda"
 path = "./data/4/SeiKo"
 config = {}
-
-[[export]]
-format = "graphml"
-path = "./"
-config = { guess_vis = true, zip = true }
