@@ -1,2 +1,1 @@
-cd tools/pepper/
-./pepper.sh ../../exb2tt.pepper
+./annatto run exb2tt.toml
