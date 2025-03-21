@@ -6,4 +6,3 @@ cargo build --release
 cp target/release/annatto ../../
 cd ../..
 rm -rf tools/annatto
-git commit annatto -m 'updated annatto'
