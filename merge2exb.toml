@@ -1,0 +1,124 @@
+[[import]]
+format = "exmaralda"
+path = "./data/1/SeiKo/"
+config = {}
+
+[[import]]
+format = "treetagger"
+path = "./data/3/SeiKo-pos/"
+config = {}
+
+[[import]]
+format = "treetagger"
+path = "./data/3/SeiKo-lemma/"
+config = {}
+
+[[graph_op]]
+action = "enumerate"
+
+[graph_op.config]
+queries = ["pos @* doc @* node_name=/SeiKo-pos/"]
+by = [2]
+label = "pos::i"
+
+[[graph_op]]
+action = "enumerate"
+
+[graph_op.config]
+queries = ["lemma @* doc @* node_name=/SeiKo-lemma/"]
+by = [2]
+label = "lemma::i"
+
+[[graph_op]]
+action = "enumerate"
+
+[graph_op.config]
+queries = ["ctok_part @* doc @* node_name=/SeiKo/"]
+by = [2]
+label = "part::i"
+
+[[graph_op]]
+action = "link"
+
+[graph_op.config]
+source_query = "pos:i @* doc"
+source_node = 1
+source_value = [2,1]
+target_query = "part:i @* doc"
+target_node = 1
+target_value = [2,1]
+component = { ctype = "Pointing", layer = "", name = "link_pos" }
+
+[[graph_op]]
+action = "link"
+
+[graph_op.config]
+source_query = "lemma:i @* doc"
+source_node = 1
+source_value = [2,1]
+target_query = "part:i @* doc"
+target_node = 1
+target_value = [2,1]
+component = { ctype = "Pointing", layer = "", name = "link_lemma" }
+
+[[graph_op]]
+action = "check"
+
+[graph_op.config]
+report = "list"
+
+[[graph_op.config.tests]]
+query = "ctok_part"
+expected = [1, inf]
+description = "ctok_part has been properly imported"
+
+
+[[graph_op.config.tests]]
+query = "part:i"
+expected = [1, inf]
+description = "ctok_part has been properly enumerated"
+
+[[graph_op.config.tests]]
+query = "part:i"
+expected = "pos:i"
+description = "There is the correct amount of pos::i annotations"
+
+[[graph_op.config.tests]]
+query = "part:i"
+expected = "lemma:i"
+description = "There is the correct amount of lemma::i annotations"
+
+[[graph_op.config.tests]]
+query = "pos:i ->link_pos part:i"
+expected = "pos:i"
+description = "pos has been properly linked"
+
+[[graph_op.config.tests]]
+query = "lemma:i ->link_lemma part:i"
+expected = "lemma:i"
+description = "lemma has been properly linked"
+
+[[graph_op]]
+action = "map"
+
+[graph_op.config]
+rule_file = "copy-pos-lemma.toml"
+
+[[graph_op]]
+action = "revise"
+
+[graph_op.config]
+remove_subgraph = ["SeiKo-pos", "SeiKo-lemma"]
+
+[[graph_op.config.node_annos]]
+from = "part::i"
+
+[[export]]
+format = "exmaralda"
+path = "./data/4/SeiKo"
+config = {}
+
+[[export]]
+format = "graphml"
+path = "./"
+config = { guess_vis = true, zip = true }
