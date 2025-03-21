@@ -1,2 +1,1 @@
-annatto run --in-memory merge2exb.toml
-
+./annatto run --in-memory merge2exb.toml
