@@ -48,7 +48,7 @@ def check_tiers(xml, **kwargs):
                       f' correct speaker')
         result.append(f'  {_INVALID if not tier_exists else (_PASS if type_correct else _FAIL)}'
                       f' correct type')
-        has_errors |= False if total else (True if req and not correct else True)
+        has_errors |= False if total else (True if req and not correct else False)
     return has_errors, result
 
 
