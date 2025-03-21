@@ -121,4 +121,6 @@ from = "part::i"
 [[export]]
 format = "exmaralda"
 path = "./data/4/SeiKo"
-config = {}
+
+[export.config]
+tier_order = ["INT::v", "INT::tok_int", "v", "tok_part", "com", "coord", "unit", "unit2", "subclause", "subclause2", "excl", "PART_CLEAN::ctok_part", "PART_CLEAN::unit", "PART_CLEAN::auto_lemma", "PART_CLEAN::auto_pos", "PART_CLEAN::lemma", "PART_CLEAN::pos", "PART_CLEAN::cons", "PART_CLEAN::cons2", "PART_CLEAN::stage", "PART_CLEAN::stage2", "PART_CLEAN::ngr", "PART_CLEAN::kern"] 
