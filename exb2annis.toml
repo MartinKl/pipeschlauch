@@ -1,6 +1,6 @@
 [[import]]
 format = "exmaralda"
-path = "./data/4/"
+path = "./data/4/SeiKo"
 config = {}
 
 [[import]]
@@ -9,7 +9,7 @@ path = "./data/meta/"
 
 [import.config]
 identifier = "filename"
-delimiter = "\t"
+delimiter = ";"
 
 [[graph_op]]
 action = "map"
@@ -38,10 +38,6 @@ disjoint = true
 
 [[graph_op]]
 action = "revise"
-
-[graph_op.config.node_names]
-"4" = "SeiKo-Preview"
-"meta" = "SeiKo-Preview"
 
 [[graph_op.config.remove_match]]
 query = "annis:node_type=/corpus/ & annis:node_type=/node/? !@* #1"
