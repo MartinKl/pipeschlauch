@@ -1,13 +1,11 @@
 [[rules]]
 query = "annis:node_name=/meta..+/ _ident_ annis:node_type=/corpus/"
 target = 1
-ns = "src"
-name = "id"
+anno = "src::id"
 value = {target = 1, replacements = [["meta/", ""]]}
 
 [[rules]]
 query = "annis:node_name=/SeiKo..+/ _ident_ annis:node_type=/corpus/"
 target = 1
-ns = "tgt"
-name = "id"
+anno = "tgt::id"
 value = {target = 1, replacements = [["SeiKo/", ""]]}

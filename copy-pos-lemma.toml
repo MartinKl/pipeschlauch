@@ -1,27 +1,23 @@
 [[rules]]
 query = "pos ->link_pos ctok_part"
-target = 2
-ns = "PART_CLEAN"
-name = "pos"
+target = [2]
+anno = "PART_CLEAN::pos"
 value = { copy = 1 }
 
 [[rules]]
 query = "pos ->link_pos ctok_part"
-target = 2
-ns = "PART_CLEAN"
-name = "auto_pos"
+target = [2]
+anno = "PART_CLEAN::auto_pos"
 value = { copy = 1 }
 
 [[rules]]
 query = "lemma ->link_lemma ctok_part"
-target = 2
-ns = "PART_CLEAN"
-name = "lemma"
+target = [2]
+anno = "PART_CLEAN::lemma"
 value = { copy = 1 }
 
 [[rules]]
 query = "lemma ->link_lemma ctok_part"
-target = 2
-ns = "PART_CLEAN"
-name = "auto_lemma"
+target = [2]
+anno = "PART_CLEAN::auto_lemma"
 value = { copy = 1 }
