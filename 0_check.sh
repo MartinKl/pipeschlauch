@@ -1,1 +1,1 @@
-python pre_check.py data/original/
+python3 pre_check.py data/original/
