@@ -59,6 +59,14 @@ description = "There are tokens"
 # cat = [ "DP", "IP", "CP" ]
 # sentence = [ "1" ]
 
+[[graph_op]]
+action = "revise"
+
+[graph_op.config.namespaces]
+"PART_CLEAN" = "clean"
+"A01" = "part"
+"A02" = "part"
+
 [[export]]
 format = "graphml"
 path = "./data/5_annis/"
