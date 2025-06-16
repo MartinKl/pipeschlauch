@@ -47,7 +47,7 @@ remove = [1]
 action = "check"
 
 [graph_op.config]
-report = "list"
+report = "list"  # "verbose" for more details
 
 [[graph_op.config.tests]]
 query = "tok"
