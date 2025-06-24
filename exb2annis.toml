@@ -54,6 +54,7 @@ query = "excl"
 expected = [1, inf]
 description = "There are tokens"
 
+[[graph_op.config.tests]]
 [graph_op.config.tests.layers]
 excl = [ "falst", "doub", "repair", "read", "hes" ]
 coord = [ "COORD" ]
