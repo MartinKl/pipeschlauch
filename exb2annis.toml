@@ -75,6 +75,16 @@ expected = [1, inf]
 description = "There are tokens"
 
 [[graph_op.config.tests]]
+query = "lemma=//"
+expected = 0
+description = "All lemma annotations have a non-empty value."
+
+[[graph_op.config.tests]]
+query = "lemma=/( )+/"
+expected = 0
+description = "All lemma annotations have a non-empty value after trimming."
+
+[[graph_op.config.tests]]
 [graph_op.config.tests.layers]
 excl = [ "falst", "doub", "repair", "read", "hes" ]
 coord = [ "COORD" ]
