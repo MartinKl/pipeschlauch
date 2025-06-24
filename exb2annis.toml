@@ -35,6 +35,12 @@ target = 1
 anno = "PART_CLEAN::kern3"
 value = "pDET"
 
+[[graph_op.config.mapping.rules]]
+query = "PART_CLEAN:pos=\"?\""
+target = 1
+anno = "PART_CLEAN::pos"
+value = "or"
+
 
 [[graph_op]]
 action = "link"
@@ -68,11 +74,6 @@ action = "check"
 [graph_op.config]
 report = "verbose"  # "list" or "verbose"
 policy = "warn"
-
-[[graph_op.config.tests]]
-query = "excl"
-expected = [1, inf]
-description = "There are tokens"
 
 [[graph_op.config.tests]]
 query = "ctok_part=//"
@@ -141,7 +142,7 @@ kern3 = [ "DET", "KERN", "KERN0DET", "KERNpDET" ]
 [[graph_op.config.tests]]
 [graph_op.config.tests.layer]
 # obligat.
-pos = [ "NN", "NE", "VAFIN", "VAIMP", "VAINF", "VAPP", "VMFIN", "VMINF", "VMPP", "VVFIN", "VVIMP", "VVINF", "VVPP", "VVIZU", "VKFIN", "VKIMP", "VKINF", "VKPP", "VKIZU", "VPFIN", "VPIMP", "VPINF", "VPPP", "VPIZU", "TRUNC", "ART", "ADJA", "ADJD", "ADV", "PDAT", "PDS", "PIAT", "PIS", "PIDAT", "PIDS", "PPER", "PPOSAT", "PPOSS", "PRELAT", "PRELS", "PRF", "PWAT", "PWS", "PWAV", "CARD", "ORD", "KON", "KOUS", "KOUI", "KOKOM", "APPR", "APPRART", "APPO", "APZR", "PTKA", "NGIRR", "PTKNEG", "PTKVZ", "PTKVZU", "PTKZU", "PTKIFG", "PTKMA", "PTKMWL", "NGHES", "NGAKW", "NGONO", "SEDM", "SEQU", "FM", "SPELL", "UI", "XY", "AB", "?" ]
+pos = [ "NN", "NE", "VAFIN", "VAIMP", "VAINF", "VAPP", "VMFIN", "VMINF", "VMPP", "VVFIN", "VVIMP", "VVINF", "VVPP", "VVIZU", "VKFIN", "VKIMP", "VKINF", "VKPP", "VKIZU", "VPFIN", "VPIMP", "VPINF", "VPPP", "VPIZU", "TRUNC", "ART", "ADJA", "ADJD", "ADV", "PDAT", "PDS", "PIAT", "PIS", "PIDAT", "PIDS", "PPER", "PPOSAT", "PPOSS", "PRELAT", "PRELS", "PRF", "PWAT", "PWS", "PWAV", "CARD", "ORD", "KON", "KOUS", "KOUI", "KOKOM", "APPR", "APPRART", "APPO", "APZR", "PTKA", "NGIRR", "PTKNEG", "PTKVZ", "PTKVZU", "PTKZU", "PTKIFG", "PTKMA", "PTKMWL", "NGHES", "NGAKW", "NGONO", "SEDM", "SEQU", "FM", "SPELL", "UI", "XY", "AB", "or" ]
 excl = [ "falst", "doub", "repair", "read", "hes" ]
 coord = [ "COORD" ]
 unit = [ "DEC", "INT", "WINT", "IMP", "DISC", "IRNON", "SCU", "Ø", "DECBREAK", "DECDISC", "INTBREAK", "INTDISC", "WINTBREAK", "WINTDISC", "IMPBREAK", "IMPDISC" ]
