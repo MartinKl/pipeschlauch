@@ -74,6 +74,12 @@ action = "check"
 [graph_op.config]
 report = "verbose"  # "list" or "verbose"
 policy = "warn"
+save = "convert.log"
+
+[[graph_op.config.tests]]
+query = "excl"
+expected = [1, inf]
+description = "There are tokens"
 
 [[graph_op.config.tests]]
 query = "ctok_part=//"
