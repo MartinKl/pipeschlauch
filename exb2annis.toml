@@ -189,3 +189,15 @@ path = "./data/5_annis/"
 [export.config]
 guess_vis = true
 zip = true
+add_vis = """
+[context]
+default = 5
+sizes = [1, 2, 3, 5, 10, 25, 50]
+max = 100
+segmentation = "clean::ctok_part"
+
+[view]
+page_size = 10
+base_text_segmentation = "clean::ctok_part"
+
+"""
