@@ -182,6 +182,22 @@ action = "revise"
 "D04" = "part"
 "D05" = "part"
 
+[[graph_op.config.components]]
+from = { ctype = "Ordering", layer = "annis", name = "tok_part" }
+to = { ctype = "Ordering", layer = "clean", name = "tok_part" }
+
+[[graph_op.config.components]]
+from = { ctype = "Ordering", layer = "annis", name = "ctok_part" }
+to = { ctype = "Ordering", layer = "clean", name = "ctok_part" }
+
+[[graph_op.config.components]]
+from = { ctype = "Ordering", layer = "annis", name = "tok_int" }
+to = { ctype = "Ordering", layer = "clean", name = "tok_int" }
+
+[[graph_op.config.components]]
+from = { ctype = "Ordering", layer = "annis", name = "com" }
+to = { ctype = "Ordering", layer = "clean", name = "com" }
+
 [[export]]
 format = "graphml"
 path = "./data/5_annis/"
