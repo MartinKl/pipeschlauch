@@ -23,6 +23,7 @@ action = "enumerate"
 
 [graph_op.config]
 queries = ["pos @* doc @* node_name=/SeiKo-pos/"]
+target = 1
 by = [2]
 label = "pos::i"
 
@@ -31,6 +32,7 @@ action = "enumerate"
 
 [graph_op.config]
 queries = ["lemma @* doc @* node_name=/SeiKo-lemma/"]
+target = 1
 by = [2]
 label = "lemma::i"
 
@@ -39,6 +41,7 @@ action = "enumerate"
 
 [graph_op.config]
 queries = ["ctok_part @* doc @* node_name=/SeiKo/"]
+target = 1
 by = [2]
 label = "part::i"
 
