@@ -17,6 +17,7 @@ config = {}
 action = "time"
 
 [graph_op.config]
+fallback_start = 0
 
 [[graph_op]]
 action = "enumerate"
