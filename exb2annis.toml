@@ -239,6 +239,26 @@ optional = true
 # mult_kon
 # prel
 
+[[graph_op]]
+action = "revise"
+
+[graph_op.config.components]
+from = { ctype = "Ordering", layer = "clean", name = "ctok_part" }
+to = { ctype = "Ordering", layer = "default_ns", name = "ctok_part" }
+
+[graph_op.config.components]
+from = { ctype = "Ordering", layer = "clean", name = "com" }
+to = { ctype = "Ordering", layer = "default_ns", name = "com" }
+
+[graph_op.config.components]
+from = { ctype = "Ordering", layer = "clean", name = "tok_part" }
+to = { ctype = "Ordering", layer = "default_ns", name = "tok_part" }
+
+[graph_op.config.components]
+from = { ctype = "Ordering", layer = "clean", name = "tok_int" }
+to = { ctype = "Ordering", layer = "default_ns", name = "tok_int" }
+
+
 [[export]]
 format = "graphml"
 path = "./data/5_annis/"
@@ -251,10 +271,10 @@ add_vis = """
 default = 5
 sizes = [1, 2, 3, 5, 10, 25, 50]
 max = 100
-segmentation = "clean::ctok_part"
+segmentation = "ctok_part"
 
 [view]
 page_size = 10
-base_text_segmentation = "clean::ctok_part"
+base_text_segmentation = "ctok_part"
 
 """
