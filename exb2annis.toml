@@ -242,19 +242,19 @@ optional = true
 [[graph_op]]
 action = "revise"
 
-[graph_op.config.components]
+[[graph_op.config.components]]
 from = { ctype = "Ordering", layer = "clean", name = "ctok_part" }
 to = { ctype = "Ordering", layer = "default_ns", name = "ctok_part" }
 
-[graph_op.config.components]
+[[graph_op.config.components]]
 from = { ctype = "Ordering", layer = "clean", name = "com" }
 to = { ctype = "Ordering", layer = "default_ns", name = "com" }
 
-[graph_op.config.components]
+[[graph_op.config.components]]
 from = { ctype = "Ordering", layer = "clean", name = "tok_part" }
 to = { ctype = "Ordering", layer = "default_ns", name = "tok_part" }
 
-[graph_op.config.components]
+[[graph_op.config.components]]
 from = { ctype = "Ordering", layer = "clean", name = "tok_int" }
 to = { ctype = "Ordering", layer = "default_ns", name = "tok_int" }
 
