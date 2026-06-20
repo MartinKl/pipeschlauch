@@ -41,7 +41,6 @@ target = 1
 anno = "PART_CLEAN::pos"
 value = "or"
 
-
 [[graph_op]]
 action = "link"
 
@@ -60,6 +59,7 @@ action = "collapse"
 [graph_op.config]
 component = { ctype = "Pointing", layer = "", name = "merge" }
 disjoint = true
+keep_name = true
 
 [[graph_op]]
 action = "revise"
@@ -278,3 +278,6 @@ page_size = 10
 base_text_segmentation = "ctok_part"
 
 """
+
+[save]
+target = "db"
