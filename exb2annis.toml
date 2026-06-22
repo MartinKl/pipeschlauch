@@ -256,7 +256,7 @@ to = { ctype = "Ordering", layer = "default_ns", name = "tok_int" }
 
 [[graph_op.config.remove_match]]  # das hier einfach als template für weitere verwenden (also AutoSave an beiden Stellen durch anderen Namen ersetzen)
 query = "annis:doc _ident_ AutoSave"
-remove = { node = 1, anno = "AutoSave" }
+remove = [{ node = 1, anno = "AutoSave" }]
 
 [[export]]
 format = "graphml"
