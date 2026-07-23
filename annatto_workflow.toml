@@ -1,0 +1,374 @@
+[[import]]
+format = "exmaralda"
+path = "./data/4/SeiKo"
+
+[import.config]
+
+[[import]]
+format = "meta"
+path = "./data/meta/"
+
+[import.config]
+identifier = "filename"
+delimiter = ";"
+
+[[graph_op]]
+action = "map"
+
+[graph_op.config]
+rule_file = "rename_rules.toml"
+debug = false
+
+[[graph_op.config.mapping.rules]]
+query = 'PART_CLEAN:kern="+DET"'
+target = 1
+anno = "PART_CLEAN::kern"
+value = "pDET"
+delete = []
+
+[[graph_op.config.mapping.rules]]
+query = 'PART_CLEAN:kern2="+DET"'
+target = 1
+anno = "PART_CLEAN::kern2"
+value = "pDET"
+delete = []
+
+[[graph_op.config.mapping.rules]]
+query = 'PART_CLEAN:kern3="+DET"'
+target = 1
+anno = "PART_CLEAN::kern3"
+value = "pDET"
+delete = []
+
+[[graph_op.config.mapping.rules]]
+query = 'PART_CLEAN:pos="?"'
+target = 1
+anno = "PART_CLEAN::pos"
+value = "or"
+delete = []
+
+[graph_op.config.mapping.repetition.Fixed]
+n = 1
+
+[[graph_op]]
+action = "link"
+
+[graph_op.config]
+source_query = "src:id"
+source_node = 1
+source_value = [1]
+source_to_edge = []
+target_query = "tgt:id"
+target_node = 1
+target_value = [1]
+target_to_edge = []
+value_sep = ""
+
+[graph_op.config.component]
+ctype = "Pointing"
+layer = ""
+name = "merge"
+
+[[graph_op]]
+action = "collapse"
+
+[graph_op.config]
+disjoint = true
+keep_name = false
+
+[graph_op.config.component]
+ctype = "Pointing"
+layer = ""
+name = "merge"
+
+[[graph_op]]
+action = "revise"
+
+[graph_op.config]
+remove_nodes = []
+edge_annos = []
+remove_subgraph = []
+
+[graph_op.config.node_names]
+
+[[graph_op.config.remove_match]]
+query = "annis:node_type=/corpus/ & annis:node_type=/node/? !@* #1"
+remove = [1]
+
+[[graph_op.config.node_annos]]
+from = "part::coord"
+to = "clean::coord"
+
+[[graph_op.config.node_annos]]
+from = "part::subclause"
+to = "clean::subclause"
+
+[[graph_op.config.node_annos]]
+from = "part::subclause2"
+to = "clean::subclause2"
+
+[[graph_op.config.node_annos]]
+from = "part::subclause3"
+to = "clean::subclause3"
+
+[[graph_op.config.node_annos]]
+from = "part::subclause4"
+to = "clean::subclause4"
+
+[[graph_op.config.node_annos]]
+from = "part::subclause5"
+to = "clean::subclause5"
+
+[[graph_op.config.node_annos]]
+from = "part::unit"
+to = "clean::unit"
+
+[[graph_op.config.node_annos]]
+from = "part::unit2"
+to = "clean::unit2"
+
+[[graph_op.config.node_annos]]
+from = "part::unit3"
+to = "clean::unit3"
+
+[[graph_op.config.node_annos]]
+from = "part::unit4"
+to = "clean::unit4"
+
+[[graph_op.config.node_annos]]
+from = "part::unit5"
+to = "clean::unit5"
+
+[graph_op.config.namespaces]
+A02 = "part"
+A04 = "part"
+A05 = "part"
+B01 = "part"
+B02 = "part"
+B07 = "part"
+B08 = "part"
+B09 = "part"
+B10 = "part"
+B11 = "part"
+C01 = "part"
+C02 = "part"
+C03 = "part"
+C04 = "part"
+C05 = "part"
+D01 = "part"
+D02 = "part"
+D03 = "part"
+D04 = "part"
+D05 = "part"
+PART_CLEAN = "clean"
+
+[[graph_op.config.components]]
+
+[graph_op.config.components.from]
+ctype = "Ordering"
+layer = "annis"
+name = "tok_part"
+
+[graph_op.config.components.to]
+ctype = "Ordering"
+layer = "clean"
+name = "tok_part"
+
+[[graph_op.config.components]]
+
+[graph_op.config.components.from]
+ctype = "Ordering"
+layer = "annis"
+name = "ctok_part"
+
+[graph_op.config.components.to]
+ctype = "Ordering"
+layer = "clean"
+name = "ctok_part"
+
+[[graph_op.config.components]]
+
+[graph_op.config.components.from]
+ctype = "Ordering"
+layer = "annis"
+name = "tok_int"
+
+[graph_op.config.components.to]
+ctype = "Ordering"
+layer = "clean"
+name = "tok_int"
+
+[[graph_op.config.components]]
+
+[graph_op.config.components.from]
+ctype = "Ordering"
+layer = "annis"
+name = "com"
+
+[graph_op.config.components.to]
+ctype = "Ordering"
+layer = "clean"
+name = "com"
+
+[[graph_op]]
+action = "check"
+
+[graph_op.config]
+report = "verbose"
+failed_only = false
+policy = "warn"
+save = "convert.log"
+overwrite = false
+
+[[graph_op.config.tests]]
+query = "ctok_part=//"
+expected = 0
+description = "All ctok_part annotations have a non-empty value."
+
+[[graph_op.config.tests]]
+query = "ctok_part=/( )+/"
+expected = 0
+description = "All ctok_part annotations have a non-empty value after trimming."
+
+[[graph_op.config.tests]]
+query = "lemma=//"
+expected = 0
+description = "All lemma annotations have a non-empty value."
+
+[[graph_op.config.tests]]
+query = "lemma=/( )+/"
+expected = 0
+description = "All lemma annotations have a non-empty value after trimming."
+
+[[graph_op.config.tests]]
+optional = true
+
+[graph_op.config.tests.layers]
+"clean::kern2" = ["DET", "KERN", "0DET", "pDET", "QUA", "KERN0DET", "KERNpDET"]
+"clean::kern3" = ["DET", "KERN", "0DET", "pDET", "QUA", "KERN0DET", "KERNpDET"]
+"clean::ngr2" = ["NGrO", "NGrCO", "NGrQ", "NGrADJ", "NGrPRT", "NGrEXPRT", "NGrGEN", "NGrSO", "NGrPADV", "NGrPREP", "NGrPGEN", "NGrPEX", "NGrAPP", "NGrREL", "NGrINF", "NGrCOMP", "NGrMULT", "ADJ", "PRT", "EXPRT", "GEN", "PADV", "PREP", "PGEN", "PEX", "APP", "REL", "INF", "COMP", "NGrMULTADJGEN", "NGrMULTADJPREP", "NGrMULTADJPGEN", "NGrMULTADJAPP", "NGrMULTADJREL", "NGrMULTADJPRT", "NGrMULTADJEXPRT", "NGrMULTADJPADV", "NGrMULTADJPEX", "NGrMULTADJINF", "NGrMULTADJCOMP", "NGrMULTGENPREP", "NGrMULTGENPGEN", "NGrMULTGENAPP", "NGrMULTGENREL", "NGrMULTGENPRT", "NGrMULTGENEXPRT", "NGrMULTGENPADV", "NGrMULTGENPEX", "NGrMULTGENINF", "NGrMULTGENCOMP", "NGrMULTPREPPGEN", "NGrMULTPREPAPP", "NGrMULTPREPREL", "NGrMULTPREPPRT", "NGrMULTPREPEXPRT", "NGrMULTPREPPADV", "NGrMULTPREPPEX", "NGrMULTPREPINF", "NGrMULTPREPCOMP", "NGrMULTPGENAPP", "NGrMULTPGENREL", "NGrMULTPGENPRT", "NGrMULTPGENEXPRT", "NGrMULTPGENPADV", "NGrMULTPGENPEX", "NGrMULTPGENINF", "NGrMULTPGENCOMP", "NGrMULTAPPREL", "NGrMULTAPPPRT", "NGrMULTAPPEXPRT", "NGrMULTAPPPADV", "NGrMULTAPPPEX", "NGrMULTAPPINF", "NGrMULTAPPCOMP", "NGrMULTRELPRT", "NGrMULTRELEXPRT", "NGrMULTRELPADV", "NGrMULTRELPEX", "NGrMULTRELINF", "NGrMULTRELCOMP", "NGrMULTPRTEXPRT", "NGrMULTPRTPADV", "NGrMULTPRTPEX", "NGrMULTPRTINF", "NGrMULTPRTCOMP", "NGrMULTEXPRTPADV", "NGrMULTEXPRTPEX", "NGrMULTEXPRTINF", "NGrMULTEXPRTCOMP", "NGrMULTPADVPEX", "NGrMULTPADVINF", "NGrMULTPADVCOMP", "NGrMULTPEXINF", "NGrMULTPEXCOMP", "NGrMULTINFCOMP", "NGrMULTSOPREP", "NGrMULTSOADJ", "NGrMULTADJPREPREL", "NGrMULTPADJPREP", "NGrMULTPREPPREP", "NGrMULTQREL"]
+"clean::ngr3" = ["NGrO", "NGrCO", "NGrQ", "NGrADJ", "NGrPRT", "NGrEXPRT", "NGrGEN", "NGrSO", "NGrPADV", "NGrPREP", "NGrPGEN", "NGrPEX", "NGrAPP", "NGrREL", "NGrINF", "NGrCOMP", "NGrMULT", "ADJ", "PRT", "EXPRT", "GEN", "PADV", "PREP", "PGEN", "PEX", "APP", "REL", "INF", "COMP", "NGrMULTADJGEN", "NGrMULTADJPREP", "NGrMULTADJPGEN", "NGrMULTADJAPP", "NGrMULTADJREL", "NGrMULTADJPRT", "NGrMULTADJEXPRT", "NGrMULTADJPADV", "NGrMULTADJPEX", "NGrMULTADJINF", "NGrMULTADJCOMP", "NGrMULTGENPREP", "NGrMULTGENPGEN", "NGrMULTGENAPP", "NGrMULTGENREL", "NGrMULTGENPRT", "NGrMULTGENEXPRT", "NGrMULTGENPADV", "NGrMULTGENPEX", "NGrMULTGENINF", "NGrMULTGENCOMP", "NGrMULTPREPPGEN", "NGrMULTPREPAPP", "NGrMULTPREPREL", "NGrMULTPREPPRT", "NGrMULTPREPEXPRT", "NGrMULTPREPPADV", "NGrMULTPREPPEX", "NGrMULTPREPINF", "NGrMULTPREPCOMP", "NGrMULTPGENAPP", "NGrMULTPGENREL", "NGrMULTPGENPRT", "NGrMULTPGENEXPRT", "NGrMULTPGENPADV", "NGrMULTPGENPEX", "NGrMULTPGENINF", "NGrMULTPGENCOMP", "NGrMULTAPPREL", "NGrMULTAPPPRT", "NGrMULTAPPEXPRT", "NGrMULTAPPPADV", "NGrMULTAPPPEX", "NGrMULTAPPINF", "NGrMULTAPPCOMP", "NGrMULTRELPRT", "NGrMULTRELEXPRT", "NGrMULTRELPADV", "NGrMULTRELPEX", "NGrMULTRELINF", "NGrMULTRELCOMP", "NGrMULTPRTEXPRT", "NGrMULTPRTPADV", "NGrMULTPRTPEX", "NGrMULTPRTINF", "NGrMULTPRTCOMP", "NGrMULTEXPRTPADV", "NGrMULTEXPRTPEX", "NGrMULTEXPRTINF", "NGrMULTEXPRTCOMP", "NGrMULTPADVPEX", "NGrMULTPADVINF", "NGrMULTPADVCOMP", "NGrMULTPEXINF", "NGrMULTPEXCOMP", "NGrMULTINFCOMP", "NGrMULTSOPREP", "NGrMULTSOADJ", "NGrMULTADJPREPREL", "NGrMULTPADJPREP", "NGrMULTPREPPREP", "NGrMULTQREL"]
+"clean::subclause" = ["SCREL", "SCADV", "SCINDER", "SCCOMP", "SCINFUM", "SCINF", "SCNON", "MCSUBDEC", "MCSUBINT", "MCSUBWINT", "MCSUBIMP", "MCSUBDISC", "MCSUBIRNON", "MCSUBSCU", "MCSUBØ", "SCRELBREAK", "SCRELDISC", "SCRELSCU", "SCADVBREAK", "SCADVDISC", "SCADVSCU", "SCINDERBREAK", "SCINDERDISC", "SCINDERSCU", "SCCOMPBREAK", "SCCOMPDISC", "SCCOMPSCU", "SCINFUMBREAK", "SCINFUMDISC", "SCINFUMSCU", "SCINFBREAK", "SCINFDISC", "SCINFSCU", "SCNONBREAK", "SCNONDISC", "SCNONSCU", "MCSUBDECBREAK", "MCSUBDECDISC", "MCSUBINTBREAK", "MCSUBINTDISC", "MCSUBWINTBREAK", "MCSUBWINTDISC", "MCSUBIMPBREAK", "MCSUBIMPDISC"]
+"clean::subclause2" = ["SCREL", "SCADV", "SCINDER", "SCCOMP", "SCINFUM", "SCINF", "SCNON", "MCSUBDEC", "MCSUBINT", "MCSUBWINT", "MCSUBIMP", "MCSUBDISC", "MCSUBIRNON", "MCSUBSCU", "MCSUBØ", "SCRELBREAK", "SCRELDISC", "SCRELSCU", "SCADVBREAK", "SCADVDISC", "SCADVSCU", "SCINDERBREAK", "SCINDERDISC", "SCINDERSCU", "SCCOMPBREAK", "SCCOMPDISC", "SCCOMPSCU", "SCINFUMBREAK", "SCINFUMDISC", "SCINFUMSCU", "SCINFBREAK", "SCINFDISC", "SCINFSCU", "SCNONBREAK", "SCNONDISC", "SCNONSCU", "MCSUBDECBREAK", "MCSUBDECDISC", "MCSUBINTBREAK", "MCSUBINTDISC", "MCSUBWINTBREAK", "MCSUBWINTDISC", "MCSUBIMPBREAK", "MCSUBIMPDISC"]
+"clean::subclause2_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::subclause2_stage" = ["nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+"clean::subclause3" = ["SCREL", "SCADV", "SCINDER", "SCCOMP", "SCINFUM", "SCINF", "SCNON", "MCSUBDEC", "MCSUBINT", "MCSUBWINT", "MCSUBIMP", "MCSUBDISC", "MCSUBIRNON", "MCSUBSCU", "MCSUBØ", "SCRELBREAK", "SCRELDISC", "SCRELSCU", "SCADVBREAK", "SCADVDISC", "SCADVSCU", "SCINDERBREAK", "SCINDERDISC", "SCINDERSCU", "SCCOMPBREAK", "SCCOMPDISC", "SCCOMPSCU", "SCINFUMBREAK", "SCINFUMDISC", "SCINFUMSCU", "SCINFBREAK", "SCINFDISC", "SCINFSCU", "SCNONBREAK", "SCNONDISC", "SCNONSCU", "MCSUBDECBREAK", "MCSUBDECDISC", "MCSUBINTBREAK", "MCSUBINTDISC", "MCSUBWINTBREAK", "MCSUBWINTDISC", "MCSUBIMPBREAK", "MCSUBIMPDISC"]
+"clean::subclause3_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::subclause3_stage" = ["nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+"clean::subclause4" = ["SCREL", "SCADV", "SCINDER", "SCCOMP", "SCINFUM", "SCINF", "SCNON", "MCSUBDEC", "MCSUBINT", "MCSUBWINT", "MCSUBIMP", "MCSUBDISC", "MCSUBIRNON", "MCSUBSCU", "MCSUBØ", "SCRELBREAK", "SCRELDISC", "SCRELSCU", "SCADVBREAK", "SCADVDISC", "SCADVSCU", "SCINDERBREAK", "SCINDERDISC", "SCINDERSCU", "SCCOMPBREAK", "SCCOMPDISC", "SCCOMPSCU", "SCINFUMBREAK", "SCINFUMDISC", "SCINFUMSCU", "SCINFBREAK", "SCINFDISC", "SCINFSCU", "SCNONBREAK", "SCNONDISC", "SCNONSCU", "MCSUBDECBREAK", "MCSUBDECDISC", "MCSUBINTBREAK", "MCSUBINTDISC", "MCSUBWINTBREAK", "MCSUBWINTDISC", "MCSUBIMPBREAK", "MCSUBIMPDISC"]
+"clean::subclause4_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::subclause4_stage" = ["nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+"clean::subclause5" = ["SCREL", "SCADV", "SCINDER", "SCCOMP", "SCINFUM", "SCINF", "SCNON", "MCSUBDEC", "MCSUBINT", "MCSUBWINT", "MCSUBIMP", "MCSUBDISC", "MCSUBIRNON", "MCSUBSCU", "MCSUBØ", "SCRELBREAK", "SCRELDISC", "SCRELSCU", "SCADVBREAK", "SCADVDISC", "SCADVSCU", "SCINDERBREAK", "SCINDERDISC", "SCINDERSCU", "SCCOMPBREAK", "SCCOMPDISC", "SCCOMPSCU", "SCINFUMBREAK", "SCINFUMDISC", "SCINFUMSCU", "SCINFBREAK", "SCINFDISC", "SCINFSCU", "SCNONBREAK", "SCNONDISC", "SCNONSCU", "MCSUBDECBREAK", "MCSUBDECDISC", "MCSUBINTBREAK", "MCSUBINTDISC", "MCSUBWINTBREAK", "MCSUBWINTDISC", "MCSUBIMPBREAK", "MCSUBIMPDISC"]
+"clean::subclause5_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::subclause5_stage" = ["nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+"clean::subclause_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::subclause_stage" = ["nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+"clean::unit2" = ["DEC", "INT", "WINT", "IMP", "BREAK", "DISC", "IRNON", "SCU", "Ø", "DECBREAK", "DECDISC", "INTBREAK", "INTDISC", "WINTBREAK", "WINTDISC", "IMPBREAK", "IMPDISC"]
+"clean::unit2_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::unit2_stage" = ["Ø", "nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+"clean::unit3" = ["DEC", "INT", "WINT", "IMP", "BREAK", "DISC", "IRNON", "SCU", "Ø", "DECBREAK", "DECDISC", "INTBREAK", "INTDISC", "WINTBREAK", "WINTDISC", "IMPBREAK", "IMPDISC"]
+"clean::unit3_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::unit3_stage" = ["Ø", "nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+"clean::unit4" = ["DEC", "INT", "WINT", "IMP", "BREAK", "DISC", "IRNON", "SCU", "Ø", "DECBREAK", "DECDISC", "INTBREAK", "INTDISC", "WINTBREAK", "WINTDISC", "IMPBREAK", "IMPDISC"]
+"clean::unit4_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::unit4_stage" = ["nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+
+[[graph_op.config.tests]]
+optional = false
+
+[graph_op.config.tests.layers]
+"clean::coord" = ["COORD"]
+"clean::kern" = ["DET", "KERN", "0DET", "pDET", "QUA", "KERN0DET", "KERNpDET"]
+"clean::ngr" = ["NGrO", "NGrCO", "NGrQ", "NGrADJ", "NGrPRT", "NGrEXPRT", "NGrGEN", "NGrSO", "NGrPADV", "NGrPREP", "NGrPGEN", "NGrPEX", "NGrAPP", "NGrREL", "NGrINF", "NGrCOMP", "NGrMULT", "ADJ", "PRT", "EXPRT", "GEN", "PADV", "PREP", "PGEN", "PEX", "APP", "REL", "INF", "COMP", "NGrMULTADJGEN", "NGrMULTADJPREP", "NGrMULTADJPGEN", "NGrMULTADJAPP", "NGrMULTADJREL", "NGrMULTADJPRT", "NGrMULTADJEXPRT", "NGrMULTADJPADV", "NGrMULTADJPEX", "NGrMULTADJINF", "NGrMULTADJCOMP", "NGrMULTGENPREP", "NGrMULTGENPGEN", "NGrMULTGENAPP", "NGrMULTGENREL", "NGrMULTGENPRT", "NGrMULTGENEXPRT", "NGrMULTGENPADV", "NGrMULTGENPEX", "NGrMULTGENINF", "NGrMULTGENCOMP", "NGrMULTPREPPGEN", "NGrMULTPREPAPP", "NGrMULTPREPREL", "NGrMULTPREPPRT", "NGrMULTPREPEXPRT", "NGrMULTPREPPADV", "NGrMULTPREPPEX", "NGrMULTPREPINF", "NGrMULTPREPCOMP", "NGrMULTPGENAPP", "NGrMULTPGENREL", "NGrMULTPGENPRT", "NGrMULTPGENEXPRT", "NGrMULTPGENPADV", "NGrMULTPGENPEX", "NGrMULTPGENINF", "NGrMULTPGENCOMP", "NGrMULTAPPREL", "NGrMULTAPPPRT", "NGrMULTAPPEXPRT", "NGrMULTAPPPADV", "NGrMULTAPPPEX", "NGrMULTAPPINF", "NGrMULTAPPCOMP", "NGrMULTRELPRT", "NGrMULTRELEXPRT", "NGrMULTRELPADV", "NGrMULTRELPEX", "NGrMULTRELINF", "NGrMULTRELCOMP", "NGrMULTPRTEXPRT", "NGrMULTPRTPADV", "NGrMULTPRTPEX", "NGrMULTPRTINF", "NGrMULTPRTCOMP", "NGrMULTEXPRTPADV", "NGrMULTEXPRTPEX", "NGrMULTEXPRTINF", "NGrMULTEXPRTCOMP", "NGrMULTPADVPEX", "NGrMULTPADVINF", "NGrMULTPADVCOMP", "NGrMULTPEXINF", "NGrMULTPEXCOMP", "NGrMULTINFCOMP", "NGrMULTSOPREP", "NGrMULTSOADJ", "NGrMULTADJPREPREL", "NGrMULTPADJPREP", "NGrMULTPREPPREP", "NGrMULTQREL"]
+"clean::pos" = ["NN", "NE", "VAFIN", "VAIMP", "VAINF", "VAPP", "VMFIN", "VMINF", "VMPP", "VVFIN", "VVIMP", "VVINF", "VVPP", "VVIZU", "VKFIN", "VKIMP", "VKINF", "VKPP", "VKIZU", "VPFIN", "VPIMP", "VPINF", "VPPP", "VPIZU", "TRUNC", "ART", "ADJA", "ADJD", "ADV", "PDAT", "PDS", "PIAT", "PIS", "PIDAT", "PIDS", "PPER", "PPOSAT", "PPOSS", "PRELAT", "PRELS", "PRF", "PWAT", "PWS", "PWAV", "CARD", "ORD", "KON", "KOUS", "KOUI", "KOKOM", "APPR", "APPRART", "APPO", "APZR", "PTKA", "NGIRR", "PTKNEG", "PTKVZ", "PTKVZU", "PTKZU", "PTKIFG", "PTKMA", "PTKMWL", "NGHES", "NGAKW", "NGONO", "SEDM", "SEQU", "FM", "SPELL", "UI", "XY", "AB", "or", "APPR NN", "VVFIN PPER", "VAFIN PPER", "VMFIN PPER", "VKFIN PPER", "VVFIN PTKVZ", "VVIMP PTKMA", "VVFINorVVINFor", "PIATorPISor", "PWSorPISor", "VMFINorVVFINor", "VVPPorVVFINor", "VKFINorVAFINor", "PIATorPTKIFGor", "VVINForVVFINorNNor", "VVPPorVVINFor", "NNorFMor", "ADJAorADJDor", "ARTorPDSor", "NNorUIor", "ARTorPPERor", "PISorNNor", "ADV ADJD", "VVFIN PTKMA"]
+"clean::unit" = ["DEC", "INT", "WINT", "IMP", "BREAK", "DISC", "IRNON", "SCU", "Ø", "DECBREAK", "DECDISC", "INTBREAK", "INTDISC", "WINTBREAK", "WINTDISC", "IMPBREAK", "IMPDISC"]
+"clean::unit_cons" = ["V", "S", "Sexpl", "Scl", "Sext", "O", "Oexpl", "Ocl", "Oext", "A", "Aext", "Pred", "Predcl", "cl", "ext", "N", "C", "X", "Xcl", "@", "O V", "V O", "V Oexpl", "V S", "V Sexpl", "V Pred", "V X"]
+"clean::unit_stage" = ["Ø", "nostage", "nostagekor", "SV", "SVX", "SVO", "ADV", "SEP", "NOSEP", "SEPnoev", "SEPanti", "SEP ADV", "NOSEP ADV", "SEPnoev ADV", "SEPanti ADV", "INV", "INVnoev", "INVpseudo", "INVin", "INV SEP", "INVpseudo SEP", "INVin SEP", "INV SEPanti", "INV SEPnoev", "VEND", "VENDnoev", "!VEND", "!SV NOVEND", "!SVX NOVEND", "!SVO NOVEND", "!ADV NOVEND", "!SEP NOVEND", "!NOSEP NOVEND", "!SEPnoev NOVEND", "!SEP !INVpseudo NOVEND", "!INV NOVEND", "!INVnoev", "!INVpseudo NOVEND", "!INVpseudo VENDnoev", "V1imp", "V1imp SEP", "INVpseudo SEPnoev", "!VEND SEP", "!NOSEP ADV NOVEND", "!INVpseudo !NOSEP NOVEND", "!INVpseudo !SEP NOVEND", "!INV !SEP NOVEND", "!SV NOVENDnoev", "!SVX NOVENDnoev", "!SVO NOVENDnoev", "!ADV NOVENDnoev", "!SEP NOVENDnoev", "!NOSEP NOVENDnoev", "!SEPnoev NOVENDnoev", "!SEP !INVpseudo NOVENDnoev", "!INV NOVENDnoev", "!INVpseudo NOVENDnoev", "!NOSEP ADV NOVENDnoev", "!INVpseudo !NOSEP NOVENDnoev", "!INVpseudo !SEP NOVENDnoev", "!INV !SEP NOVENDnoev"]
+"part::excl" = ["falst", "doub", "repair", "read", "hes"]
+
+[[graph_op]]
+action = "revise"
+
+[graph_op.config]
+remove_nodes = []
+remove_match = []
+node_annos = []
+edge_annos = []
+remove_subgraph = []
+
+[graph_op.config.node_names]
+
+[graph_op.config.namespaces]
+
+[[graph_op.config.components]]
+
+[graph_op.config.components.from]
+ctype = "Ordering"
+layer = "clean"
+name = "ctok_part"
+
+[graph_op.config.components.to]
+ctype = "Ordering"
+layer = "default_ns"
+name = "ctok_part"
+
+[[graph_op.config.components]]
+
+[graph_op.config.components.from]
+ctype = "Ordering"
+layer = "clean"
+name = "com"
+
+[graph_op.config.components.to]
+ctype = "Ordering"
+layer = "default_ns"
+name = "com"
+
+[[graph_op.config.components]]
+
+[graph_op.config.components.from]
+ctype = "Ordering"
+layer = "clean"
+name = "tok_part"
+
+[graph_op.config.components.to]
+ctype = "Ordering"
+layer = "default_ns"
+name = "tok_part"
+
+[[graph_op.config.components]]
+
+[graph_op.config.components.from]
+ctype = "Ordering"
+layer = "clean"
+name = "tok_int"
+
+[graph_op.config.components.to]
+ctype = "Ordering"
+layer = "default_ns"
+name = "tok_int"
+
+[[export]]
+format = "graphml"
+path = "./data/5_annis/"
+
+[export.config]
+add_vis = """
+[context]
+default = 5
+sizes = [1, 2, 3, 5, 10, 25, 50]
+max = 100
+segmentation = "ctok_part"
+
+[view]
+page_size = 10
+base_text_segmentation = "ctok_part"
+
+"""
+guess_vis = true
+stable_order = false
+zip = true
+
+[footer]
+annatto_version = "0.45.0"
+success = true
