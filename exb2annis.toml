@@ -292,7 +292,7 @@ display_name = "annotations"
 visibility = "hidden"
 
 [visualizers.mappings]
-annos = "/INT::v/,/INT::tok_int/,/v/,/part::v/,part::tok_part/,/lay/,/part::lay/,/part::excl/,/part::coord/,/clean::ctok_part/,/clean::lemma/,/clean::pos/,/part::com/,/part::unit/,/part::unit2/,/part::subclause/,/part::subclause2/,/part::subclause2_1/,/part::subclause3/,/part::subclause4/,/clean::unit_cons/,/clean::unit_stage/,/clean::unit2_cons/,/clean::unit2_stage/,/clean::subclause_cons/,/clean::subclause_stage/,/clean::subclause2_1_cons/,/clean::subclause2_1_stage/,/clean::subclause2_cons/,/clean::subclause2_stage/,/clean::subclause3_cons/,/clean::subclause3_stage/,/clean::subclause4_cons/,/clean::subclause4_stage/,/clean::ngr/,/clean::kern/,/clean::ngr2/,/clean::kern2/,/clean::ngr3/,/clean::kern3/,/clean::coherence/, /clean::prel/,/clean::reference/, /clean::content/, /part::prel/"
+annos = "/INT::v/,/INT::tok_int/,/v/,/part::v/,part::tok_part/,/lay/,/part::lay/,/part::excl/,/part::coord/,/clean::ctok_part/,/clean::lemma/,/clean::pos/,/part::com/,/part::unit/,/part::unit2/,/part::unit3/,/part::subclause/,/part::subclause2/,/part::subclause2_1/,/part::subclause3/,/part::subclause4/,/clean::unit_cons/,/clean::unit_stage/,/clean::unit2_cons/,/clean::unit2_stage/,/clean::subclause_cons/,/clean::subclause_stage/,/clean::subclause2_1_cons/,/clean::subclause2_1_stage/,/clean::subclause2_cons/,/clean::subclause2_stage/,/clean::subclause3_cons/,/clean::subclause3_stage/,/clean::subclause4_cons/,/clean::subclause4_stage/,/clean::ngr/,/clean::kern/,/clean::ngr2/,/clean::kern2/,/clean::ngr3/,/clean::kern3/,/clean::coherence/, /clean::prel/,/clean::reference/, /clean::content/, /part::prel/"
 escape_html = "false"
 hide_tok = "true"
 show_ns = "false"
